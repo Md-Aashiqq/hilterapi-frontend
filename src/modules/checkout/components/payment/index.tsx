@@ -12,6 +12,8 @@ import PaymentContainer, {
 import Divider from "@modules/common/components/divider"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
+import QRImg from "../../../../app/assets/Icons/QR.jpeg"
+import Image from "next/image"
 
 const Payment = ({
   cart,
@@ -138,6 +140,9 @@ const Payment = ({
         <div className={isOpen ? "block" : "hidden"}>
           {!paidByGiftcard && availablePaymentMethods?.length && (
             <>
+              <div className="mb-4">
+                <Image src={QRImg} alt="QR Code Image" width={200} height={200} />
+              </div>
               <RadioGroup
                 value={selectedPaymentMethod}
                 onChange={(value: string) => setPaymentMethod(value)}

@@ -111,7 +111,7 @@ export default async function Footer() {
             <div className="flex flex-col gap-y-2">
               <span className="txt-small-plus txt-ui-fg-base">HitlerAbi</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
-                <li>
+                {/* <li>
                   <a
                     href="https://github.com/medusajs"
                     target="_blank"
@@ -120,8 +120,8 @@ export default async function Footer() {
                   >
                     GitHub
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a
                     href="https://docs.medusajs.com"
                     target="_blank"
@@ -130,8 +130,8 @@ export default async function Footer() {
                   >
                     Documentation
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a
                     href="https://github.com/medusajs/nextjs-starter-medusa"
                     target="_blank"
@@ -140,7 +140,7 @@ export default async function Footer() {
                   >
                     Source code
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
