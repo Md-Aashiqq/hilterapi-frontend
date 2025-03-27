@@ -6,7 +6,8 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
-
+import Image from "next/image"
+import Logo from "../../../../app/assets/Icons/logo.png"
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
@@ -38,13 +39,20 @@ export default async function Nav() {
             </div>
           </div>
 
-          <div className="flex items-center h-full">
+          <div className="flex items-center h-full gap-2">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase flex items-center gap-2"
               data-testid="nav-store-link"
             >
-              HitlerAbi
+              <Image src={Logo} alt="logo" className="w-[30px]" />
+              {/* <LocalizedClientLink
+                href="/"
+                className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+                data-testid="nav-store-link"
+              > */}
+              <p>HitlerAbi</p>
+              
             </LocalizedClientLink>
           </div>
 
