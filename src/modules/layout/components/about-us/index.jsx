@@ -4,8 +4,8 @@ const AboutUs = () => {
   return (
     <>
       <div>
-        <h2 className="text-center p-4 text-[22px] font-semibold">About Us</h2>
-        <p className="px-6">
+        <p className="text-center p-4 txt-compact-xlarge-plus uppercase">About Us</p>
+        <p className="px-6 text-ui-fg-subtle">
           Welcome to HITLER ABI, a company provides adjustable price for every
           products. It all started with a passion for accessories and
           garments. Our founder, ABINESH and AJITH , we were brothers. We had a
