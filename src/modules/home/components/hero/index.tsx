@@ -74,7 +74,7 @@ const Hero = () => {
           </Heading>
         </span>
         
-        <div className="mt-8 flex gap-4">
+        {/* <div className="mt-8 flex gap-4">
           <Button
             variant="primary"
             size="large"
@@ -89,7 +89,7 @@ const Hero = () => {
           >
             Learn More
           </Button>
-        </div>
+        </div> */}
         
         <div className="absolute bottom-8 flex gap-2">
           {carouselItems.map((_, index) => (
