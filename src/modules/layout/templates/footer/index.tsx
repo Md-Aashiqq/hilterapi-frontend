@@ -23,7 +23,7 @@ export default async function Footer() {
     },
     {
       label: "Instagram I’d:",
-      value: "@topper_manic_ @the_h.itler_abi_@aji_yazz",
+      value: "@topper_manic_ @the_h.itler_abi_ @aji_yazz",
     },
   ]
   return (
@@ -65,7 +65,25 @@ export default async function Footer() {
                         data-testid="category-link"
                       >
                         <p className="!w-[40%]">{item.label}</p>
-                        <p className="!w-[60%]">{item.value}</p>
+                        <p className={`w-[60%] ${item.label === "Instagram I’d:" && "break-words"}`}>
+                          {item.label === "Instagram I’d:" ? (
+                            item.value.split(" ").map((id, i) => 
+                              id.startsWith("@") ? (
+                                <a 
+                                  key={i} 
+                                  href={`https://www.instagram.com/${id.slice(1)}`} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-black-500 hover:underline mr-2"
+                                >
+                                  {id}
+                                </a>
+                              ) : null
+                            )
+                          ) : (
+                            item.value
+                          )}
+                        </p>         
                       </div>
                     </li>
                   )

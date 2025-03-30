@@ -20,7 +20,7 @@ export default async function Nav() {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
               <FaFacebook size={16} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
+            <a href="https://instagram.com/the_h.itler_abi_" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
               <FaInstagram size={16} />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
