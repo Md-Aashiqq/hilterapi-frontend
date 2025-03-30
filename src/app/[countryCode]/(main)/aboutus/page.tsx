@@ -3,8 +3,8 @@ import React from "react"
 const AboutUs = () => {
   return (
     <>
-      <div>
-        <p className="text-center p-4 txt-compact-xlarge-plus uppercase">About Us</p>
+      <div className="pb-[60px]">
+        <p className="text-center p-4 txt-compact-xlarge-plus uppercase pt-[40px]">About Us</p>
         <p className="px-6 text-ui-fg-subtle">
           Welcome to HITLER ABI, a company provides adjustable price for every
           products. It all started with a passion for accessories and

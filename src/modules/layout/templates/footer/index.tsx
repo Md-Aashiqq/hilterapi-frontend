@@ -4,7 +4,6 @@ import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
-import AboutUs from "../../components/about-us/index"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -29,9 +28,9 @@ export default async function Footer() {
   ]
   return (
     <footer className="border-t border-ui-border-base w-full">
-      <div className="pb-[60px]">
+      {/* <div className="pb-[60px]">
         <AboutUs />
-      </div>
+      </div> */}
       <div className="content-container flex flex-col w-full border-t border-ui-border-base">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between pt-[70px] pb-[60px]">
           <div>

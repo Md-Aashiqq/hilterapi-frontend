@@ -39,6 +39,9 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
         />
       )}
       {props.children}
+      {/* <div className="pb-[60px]">
+        <AboutUs />
+      </div> */}
       <Footer />
     </>
   )
