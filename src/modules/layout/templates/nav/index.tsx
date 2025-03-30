@@ -58,20 +58,27 @@ export default async function Nav() {
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
-              <div className="relative">
+              {/* <div className="relative">
                 <input
                   type="search"
                   placeholder="Search products..."
                   className="py-2 px-8 rounded-full bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-300"
                 />
                 <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
-              </div>
+              </div> */}
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
-                href="/aboutus"
+                href="/customerlist"
                 data-testid="nav-account-link"
               >
-                About Us
+                Customer List
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/store"
+                data-testid="nav-account-link"
+              >
+                Store
               </LocalizedClientLink>
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
@@ -79,6 +86,13 @@ export default async function Nav() {
                 data-testid="nav-account-link"
               >
                 Account
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/aboutus"
+                data-testid="nav-account-link"
+              >
+                About Us
               </LocalizedClientLink>
             </div>
             <Suspense

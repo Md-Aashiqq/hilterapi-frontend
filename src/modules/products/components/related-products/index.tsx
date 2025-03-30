@@ -57,9 +57,9 @@ export default async function RelatedProducts({
         </p>
       </div>
 
-      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
+      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8 grid-rows-[repeat(auto-fill,_50%)]">
         {products.map((product) => (
-          <li key={product.id}>
+          <li key={product.id} className="">
             <Product region={region} product={product} />
           </li>
         ))}

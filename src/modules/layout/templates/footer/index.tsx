@@ -22,7 +22,7 @@ export default async function Footer() {
       value: "+91 7092381019",
     },
     {
-      label: "Instagram I’d:",
+      label: "Social Media:",
       value: "@topper_manic_ @the_h.itler_abi_ @aji_yazz",
     },
   ]

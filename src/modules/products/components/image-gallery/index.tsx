@@ -1,6 +1,7 @@
 import { HttpTypes } from "@medusajs/types"
 import { Container } from "@medusajs/ui"
 import Image from "next/image"
+import style from "../image-gallery/ImageStyle.module.css"
 
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
@@ -8,8 +9,8 @@ type ImageGalleryProps = {
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
   return (
-    <div className="flex items-start relative">
-      <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
+    <div className={`flex items-start relative overflow-x-scroll ${style.customScrollbar}`}>
+      <div className="flex small:mx-16 gap-y-4 !w-[32%] !h-full relative !p-[10px]">
         {images.map((image, index) => {
           return (
             <Container
