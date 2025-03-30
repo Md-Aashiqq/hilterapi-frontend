@@ -49,7 +49,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             <ProductActionsWrapper id={product.id} region={region} />
           </Suspense>
         </div>
-        <div className="block w-full relative">
+        <div className="flex justify-center items-center w-full relative overflow-hidden">
           <ImageGallery images={product?.images || []} />
         </div>
         {/* <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">

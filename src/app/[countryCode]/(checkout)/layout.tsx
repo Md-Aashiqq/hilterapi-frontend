@@ -1,6 +1,8 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ChevronDown from "@modules/common/icons/chevron-down"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import Image from "next/image"
+import Logo from "../../assets/Icons/logo.png"
 
 export default function CheckoutLayout({
   children,
@@ -26,10 +28,11 @@ export default function CheckoutLayout({
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase flex items-center gap-2"
             data-testid="store-link"
           >
-            HitlerAbi Store
+            <Image src={Logo} alt="logo" className="w-[30px]" />
+            HitlerAbi
           </LocalizedClientLink>
           <div className="flex-1 basis-0" />
         </nav>

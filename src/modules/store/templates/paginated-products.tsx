@@ -3,7 +3,7 @@ import { getRegion } from "@lib/data/regions"
 import ProductPreview from "@modules/products/components/product-preview"
 import { Pagination } from "@modules/store/components/pagination"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-
+import style from "./AllProductsStyle.module.css"
 const PRODUCT_LIMIT = 12
 
 type PaginatedProductsParams = {
@@ -65,16 +65,21 @@ export default async function PaginatedProducts({
   })
 
   const totalPages = Math.ceil(count / PRODUCT_LIMIT)
-
+  console.log("categoryId--->", categoryId)
   return (
     <>
       <ul
-        className="grid-rows-[repeat(auto-fill,_50%)] grid grid-cols-2 w-full small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8 "
+        // className="allProductsContainer grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8 grid-rows-[repeat(auto-fill,_50%)]"
+        className={`${style.allProductsContainer}`}
         data-testid="products-list"
       >
         {products.map((p) => {
           return (
-            <li key={p.id} className="!h-[50%]">
+            <li 
+              key={p.id} 
+              // className={categoryId ? "!h-[100%]" : "!h-[100%]"}
+              className={`${style.productCardContainer}`}
+            >
               <ProductPreview product={p} region={region} />
             </li>
           )

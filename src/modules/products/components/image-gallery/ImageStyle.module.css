@@ -6,3 +6,27 @@
     -ms-overflow-style: none;  /* Hides scrollbar for IE & Edge */
     scrollbar-width: none;  /* Hides scrollbar for Firefox */
 }
+
+.slick-slide {
+    height: auto !important; /* Allow slides to size properly */
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slick-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+.slickSlider.slick-track{
+    width: 100% !important;
+    display: flex !important;
+}
+.slickSlider.slick-prev {
+    background-color: red;
+}
+.slickSlider.slick-next {
+    background-color: red;
+}
