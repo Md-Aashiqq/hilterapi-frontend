@@ -42,9 +42,9 @@ export default async function Footer() {
             </LocalizedClientLink>
           </div>
 
-          <div className="text-small-regular gap-10 md:gap-x-8 grid grid-cols-2 sm:grid-cols-[repeat(3,minmax(0,250px))]">
+          <div className="!text-[14px] text-small-regular gap-10 md:gap-x-8 grid grid-cols-2 sm:grid-cols-[repeat(3,minmax(0,250px))]">
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Contact Us</span>
+              <span className="txt-small-plus txt-ui-fg-base !text-[14px]">Contact Us</span>
               <ul
                 className="grid grid-cols-1 gap-2"
                 data-testid="footer-categories"
@@ -92,7 +92,7 @@ export default async function Footer() {
             </div>
             {productCategories && productCategories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+                <span className="txt-small-plus txt-ui-fg-base !text-[14px]">
                   Categories
                 </span>
                 <ul
@@ -150,7 +150,7 @@ export default async function Footer() {
             )}
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+                <span className="txt-small-plus txt-ui-fg-base !text-[14px]">
                   Collections
                 </span>
                 <ul

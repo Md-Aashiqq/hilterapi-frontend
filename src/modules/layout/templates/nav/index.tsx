@@ -56,8 +56,8 @@ export default async function Nav() {
             </LocalizedClientLink>
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end text-[14px]">
+            <div className="hidden small:flex items-center gap-x-6 h-full text-[14px]">
               {/* <div className="relative">
                 <input
                   type="search"
@@ -105,6 +105,7 @@ export default async function Nav() {
                   Cart (0)
                 </LocalizedClientLink>
               }
+              
             >
               <CartButton />
             </Suspense>
