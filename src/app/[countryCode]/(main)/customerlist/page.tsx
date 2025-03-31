@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../../assets/Icons/logo.png"
 import Image from "next/image";
+import style from "./customerList.module.css"
 
 const CustomerList = () => {
     const CustomerData = [
@@ -18,8 +19,35 @@ const CustomerList = () => {
     return(
         <>
             <p className="text-center p-4 txt-compact-xlarge-plus uppercase pt-[40px]">Customer List</p>
-            <div className="p-4 flex flex-col gap-4 my-8">
-                {CustomerData.length > 0? (
+            <div className={`p-4 flex flex-col gap-4 my-8 ${style.customerListContainer}`}>
+            <table className="border-collapse border border-gray-300 w-full">
+  <thead>
+    <tr className="bg-gray-200">
+      <th className="border border-gray-300 px-4 py-2">S.no</th>
+      <th className="border border-gray-300 px-4 py-2">Name</th>
+      <th className="border border-gray-300 px-4 py-2">Product Name</th>
+      <th className="border border-gray-300 px-4 py-2">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {CustomerData.length > 0 ? (
+      CustomerData.map((item, i) => (
+        <tr key={i} className="hover:bg-gray-100">
+          <td className="border border-gray-300 px-4 py-2">{i + 1}</td>
+          <td className="border border-gray-300 px-4 py-2">{item.name}</td>
+          <td className="border border-gray-300 px-4 py-2">{item.product}</td>
+          <td className="border border-gray-300 px-4 py-2">12/12/12</td>
+        </tr>
+      ))
+    ) : (
+      <tr>
+        <td colSpan={4} className="text-center py-4">No data available</td>
+      </tr>
+    )}
+  </tbody>
+</table>
+
+                {/* {CustomerData.length > 0? (
                     <>
                         {CustomerData.map((item, i) => {
                             return (
@@ -43,7 +71,7 @@ const CustomerList = () => {
                         <p>No Data Found</p>
                     </div>
                     </>
-                )}
+                )} */}
             </div>
         </>
     )
