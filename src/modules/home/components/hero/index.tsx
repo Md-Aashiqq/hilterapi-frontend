@@ -1,23 +1,24 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Button, Heading, Badge } from "@medusajs/ui"
-
+import AD1 from "../../../../app/assets/Icons/AD1.png"
+import AD2 from "../../../../app/assets/Icons/AD2.png"
 const Hero = () => {
   const carouselItems = [
     {
       heading: "Summer Collection",
       subHeading: "Discover the latest trends",
-      imageUrl: "/images/carousel/summer.jpg"
+      imageUrl: AD1
     },
     {
       heading: "New Arrivals",
       subHeading: "Fresh styles just for you",
-      imageUrl: "/images/carousel/new-arrivals.jpg"
+      imageUrl: AD2
     },
     {
       heading: "Special Offers",
       subHeading: "Limited time deals",
-      imageUrl: "/images/carousel/special-offers.jpg"
+      imageUrl: AD1
     }
   ]
   
@@ -38,7 +39,7 @@ const Hero = () => {
   }
   
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
+    <div className="md:h-[75vh] 2xsmall:h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
       <div className="absolute inset-0">
         {carouselItems.map((item, index) => (
           <div 
@@ -47,10 +48,10 @@ const Hero = () => {
               index === currentIndex ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${item.imageUrl})`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${item.imageUrl.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center"
-            }}
+            }}            
           />
         ))}
       </div>
