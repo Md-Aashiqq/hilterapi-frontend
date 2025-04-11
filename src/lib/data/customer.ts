@@ -252,3 +252,35 @@ export const updateCustomerAddress = async (
       return { success: false, error: err.toString() }
     })
 }
+
+interface CustomerList {
+  customers: {
+    product_name: string;
+    customer_bought_first_name: string[];
+  }[];
+}
+
+export const listCustomers = async (): Promise<CustomerList | null> => {
+  const headers = {
+    ...(await getAuthHeaders()),
+  }
+
+  const next = {
+    ...(await getCacheOptions("customers")),
+  }
+
+  return sdk.client
+    .fetch<{ customers: Array<{ product_name: string; customer_bought_first_name: string[] }> }>(
+      `/store/customerlist`,
+      {
+        method: "GET",
+        headers,
+        next,
+      }
+    )
+    .then((data) => {
+      console.log("customers", data)
+      return data as CustomerList
+    })
+    .catch(() => null)
+}
