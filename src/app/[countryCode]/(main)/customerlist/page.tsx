@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { listCustomers } from "@lib/data/customer"
 import { FiShoppingBag, FiSearch } from "react-icons/fi"
 import { HiUsers } from "react-icons/hi"
+import CustomerBanner from "./banner"
 
 interface Customer {
   product_name: string;
@@ -34,6 +35,7 @@ const CustomerList = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
+     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="mb-8">
@@ -58,7 +60,9 @@ const CustomerList = () => {
             />
           </div>
         </div>
-
+        <div className="pb-4">
+          <CustomerBanner />
+        </div>
         {/* Table Section */}
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="px-4 py-5 sm:px-6 bg-gradient-to-r from-gray-50 to-gray-100">
