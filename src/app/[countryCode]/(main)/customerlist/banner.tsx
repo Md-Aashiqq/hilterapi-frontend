@@ -15,7 +15,7 @@ const CustomerBanner = () => {
         setIsLoading(true)
         const { banners: fetchedBanners } = await listBanners()
         const filteredBanners = fetchedBanners.filter(
-          (banner: any) => banner.file_id.toLowerCase().includes('home')
+          (banner: any) => banner.file_id.toLowerCase().includes('customer')
         )
         setBanners(filteredBanners)
       } catch (error) {
