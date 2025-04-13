@@ -5,15 +5,14 @@ import { listBanners, Banner } from "@lib/data/banners"
 import Image from "next/image"
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [banners, setBanners] = useState<Banner[]>([])
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [banners, setBanners] = useState<Banner[] | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-
-        console.log("Fetching banners...")
-
+        setIsLoading(true)
         const { banners: fetchedBanners } = await listBanners()
         const filteredBanners = fetchedBanners.filter(
           (banner: any) => banner.file_id.toLowerCase().includes('home')
@@ -21,6 +20,8 @@ const Hero = () => {
         setBanners(filteredBanners)
       } catch (error) {
         console.error('Error fetching banners:', error)
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -28,7 +29,7 @@ const Hero = () => {
   }, [])
 
   useEffect(() => {
-    if (banners.length === 0) return
+    if (!banners || banners.length === 0) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
@@ -37,14 +38,24 @@ const Hero = () => {
     }, 5000)
     
     return () => clearInterval(interval)
-  }, [banners.length])
-  
+  }, [banners])
+
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
   }
 
+  if (isLoading || !banners) {
+    return (
+      <div className="md:h-[75vh] 2xsmall:h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border-4 border-ui-border-base rounded-full animate-spin border-t-ui-fg-base" />
+        </div>
+      </div>
+    )
+  }
+
   if (banners.length === 0) {
-    return null // Or a loading state
+    return null
   }
   
   return (
