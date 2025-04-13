@@ -3,7 +3,7 @@
 import { HttpTypes } from "@medusajs/types";
 import { Container } from "@medusajs/ui";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "../image-gallery/ImageStyle.module.css";
 
 type ImageGalleryProps = {
@@ -11,18 +11,20 @@ type ImageGalleryProps = {
 };
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(
-    images.length > 0 ? images[0].url : null
-  );
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (images.length > 0) {
+      setSelectedImage(images[0].url);
+    }
+  }, [images]);
 
   const handleSelectImage = (url: string) => {
     setSelectedImage(url);
   };
 
   return (
-    <>
-      
-
+    <div className="flex">
       <div
         className={`flex justify-center items-start relative overflow-x-scroll w-[30%] ${style.customScrollbar}`}
       >
@@ -54,76 +56,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default ImageGallery;
-
-
-// "use client";
-
-// import Slider from "react-slick";
-// import { HttpTypes } from "@medusajs/types";
-// import { Container } from "@medusajs/ui";
-// import Image from "next/image";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import style from "../image-gallery/ImageStyle.module.css";
-
-// type ImageGalleryProps = {
-//   images: HttpTypes.StoreProductImage[];
-// };
-
-// const ImageGallery = ({ images }: ImageGalleryProps) => {
-//   const settings = {
-//     centerMode: true,
-//     centerPadding: "60px",
-//     slidesToShow: 2, // Make sure this is set
-//     slidesToScroll: 1,
-//     infinite: true,
-//     speed: 500,
-//     vertical: false, 
-//     responsive: [
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           slidesToShow: 2, // Adjust for smaller screens
-//         },
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           slidesToShow: 1,
-//         },
-//       },
-//     ],
-//   };
-  
-
-//   return (
-//     <div className="flex items-start relative !w-[70%]">
-//       <Slider {...settings} className={`w-full ${style.slickSlider}`}>
-//         {images.map((image, index) => (
-//           <div key={image.id} className="px-2">
-//             <Container className="relative aspect-[20/20] w-full overflow-hidden bg-ui-bg-subtle" id={image.id}>
-//               {!!image.url && (
-//                 <Image
-//                   src={image.url}
-//                   priority={index <= 2}
-//                   className="absolute inset-0 rounded-lg"
-//                   alt={`Product image ${index + 1}`}
-//                   fill
-//                   sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-//                   style={{ objectFit: "cover" }}
-//                 />
-//               )}
-//             </Container>
-//           </div>
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// };
-
-// export default ImageGallery;
