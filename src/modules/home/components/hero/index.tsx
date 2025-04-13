@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { Button, Heading, Badge } from "@medusajs/ui"
 import { listBanners, Banner } from "@lib/data/banners"
+import Image from "next/image"
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -55,12 +56,18 @@ const Hero = () => {
             className={`absolute inset-0 transition-transform duration-1000 ${
               index === currentIndex ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${banner.url.replace('localhost', 'backend.mdaashiq.in')})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center"
-            }}            
-          />
+          >
+            <div className="absolute inset-0 bg-black/40 z-[1]" />
+            <Image
+              src={banner.url}
+              alt={banner.heading || "Banner image"}
+              priority={index === 0}
+              fill
+              className="object-cover"
+              quality={90}
+              sizes="100vw"
+            />
+          </div>
         ))}
       </div>
       
