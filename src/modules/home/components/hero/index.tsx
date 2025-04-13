@@ -56,7 +56,7 @@ const Hero = () => {
               index === currentIndex ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${banner.url.replace('localhost', '147.93.102.223')})`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${banner.url.replace('localhost', 'backend.mdaashiq.in')})`,
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}            
