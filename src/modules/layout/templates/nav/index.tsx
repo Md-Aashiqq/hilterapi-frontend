@@ -45,7 +45,8 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase flex items-center gap-2"
               data-testid="nav-store-link"
             >
-              <Image src={Logo} alt="logo" className="w-[30px]" />
+              <div className="p-[6px] bg-[#000]"><Image src={Logo} alt="logo" className="w-[30px]" /></div>
+              
               {/* <LocalizedClientLink
                 href="/"
                 className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
