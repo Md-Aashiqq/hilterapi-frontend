@@ -39,20 +39,20 @@ export default async function Nav() {
             </div>
           </div>
 
-          <div className="flex items-center h-full gap-2">
+          <div className="flex items-center h-full gap-2 bg-[#000] pe-2">
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase flex items-center gap-2"
               data-testid="nav-store-link"
             >
-              <div className="p-[6px] bg-[#000]"><Image src={Logo} alt="logo" className="w-[30px]" /></div>
+              <div className="p-[6px] "><Image src={Logo} alt="logo" className="w-[30px]" /></div>
               
               {/* <LocalizedClientLink
                 href="/"
                 className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
                 data-testid="nav-store-link"
               > */}
-              <p>HitlerAbi</p>
+              <p className="!text-[#fff]">HitlerAbi</p>
               
             </LocalizedClientLink>
           </div>
