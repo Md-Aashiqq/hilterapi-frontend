@@ -42,7 +42,7 @@ export default async function Footer() {
             </LocalizedClientLink>
           </div>
 
-          <div className="!text-[14px] text-small-regular gap-10 md:gap-x-8 grid grid-cols-2 sm:grid-cols-[repeat(3,minmax(0,250px))]">
+          <div className="!text-[14px] text-small-regular gap-10 2xsmall:!gap-x-8 grid !grid-cols-1 md:gap-x-8 grid grid-cols-2 sm:!grid-cols-[repeat(3,minmax(0,250px))]">
             <div className="flex flex-col gap-y-2">
               <span className="txt-small-plus txt-ui-fg-base !text-[14px]">Contact Us</span>
               <ul

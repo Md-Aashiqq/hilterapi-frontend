@@ -47,8 +47,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           ))}
         </div>
       </div>
-      <div className="w-[60%] p-4 flex justify-center rounded-md border border-black-500">
-        <div className="w-[300px] h-[300px] relative">
+      <div className="w-[60%] 2xsmall:p-0 sm:p-4 flex justify-center rounded-md border border-black-500">
+        <div className="w-[300px] 2xsmall:h-[220px] sm:h-[280px] relative">
           {selectedImage && (
             <Image src={selectedImage} alt="Selected Image" layout="fill" objectFit="fill" />
           )}
