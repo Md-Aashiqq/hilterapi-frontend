@@ -46,6 +46,7 @@ export default async function ProductPreview({
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
         </div>
+       
       </div>
     </LocalizedClientLink>
   )

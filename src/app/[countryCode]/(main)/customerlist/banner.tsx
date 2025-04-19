@@ -68,7 +68,7 @@ const CustomerBanner = () => {
               index === currentIndex ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
           >
-            <div className="absolute inset-0 bg-black/40 z-[1]" />
+            <div className="absolute inset-0 z-[1]" />
             <Image
               src={banner.url}
               alt={banner.heading || "Banner image"}

@@ -11,6 +11,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -139,27 +140,36 @@ export default function ProductActions({
         </div>
 
         <ProductPrice product={product} variant={selectedVariant} />
-
-        <Button
-          onClick={handleAddToCart}
-          disabled={
-            !inStock ||
-            !selectedVariant ||
-            !!disabled ||
-            isAdding ||
-            !isValidVariant
-          }
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
-          data-testid="add-product-button"
-        >
-          {!selectedVariant && !options
-            ? "Select variant"
-            : !inStock || !isValidVariant
-            ? "Out of stock"
-            : "Add to cart"}
-        </Button>
+        <div className="flex justify-between items-center">
+          {/* <LocalizedClientLink
+            className="w-[50%] bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none"
+            href="/cart"
+            data-testid="nav-cart-link"
+          >
+            <Button className="w-[100%] p-4 bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none">Buy Now</Button>
+          </LocalizedClientLink> */}
+          <Button
+            className="w-[100%] p-4 bordered border-[#000] !cursor-pointer !rounded-none"
+            onClick={handleAddToCart}
+            disabled={
+              !inStock ||
+              !selectedVariant ||
+              !!disabled ||
+              isAdding ||
+              !isValidVariant
+            }
+            variant="primary"
+            // className="w-full h-10"
+            isLoading={isAdding}
+            data-testid="add-product-button"
+          >
+            {!selectedVariant && !options
+              ? "Select variant"
+              : !inStock || !isValidVariant
+              ? "Out of stock"
+              : "Add to cart"}
+          </Button>
+        </div>
         <MobileActions
           product={product}
           variant={selectedVariant}
