@@ -4,6 +4,7 @@ import { listCustomers } from "@lib/data/customer"
 import { FiShoppingBag, FiSearch } from "react-icons/fi"
 import { HiUsers } from "react-icons/hi"
 import CustomerBanner from "./banner"
+import CommandBox from "@modules/common/components/ChatBox"
 
 interface Customer {
   product_name: string;
@@ -44,34 +45,35 @@ const CustomerList = () => {
             <h1 className="text-3xl font-bold">Customer Purchases</h1>
           </div>
         </div>
-
+        <div className="w-full flex justify-center pb-4"><CommandBox /></div>
         {/* Search Bar */}
-        <div className="mb-6">
-          <div className="relative max-w-md mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiSearch className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Search products or customers..."
-            />
-          </div>
-        </div>
+        
         <div className="pb-4">
           <CustomerBanner />
         </div>
         {/* Table Section */}
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-          <div className="px-4 py-5 sm:px-6 bg-gradient-to-r from-gray-50 to-gray-100">
+          <div className="px-4 py-5 sm:px-6 bg-gradient-to-r from-gray-50 to-gray-100 flex justify-between items-center">
             <div className="flex items-center">
               <HiUsers className="h-6 w-6 text-gray-600 mr-2" />
               <h3 className="text-lg leading-6 font-medium text-gray-900">
                 Purchase Details
               </h3>
             </div>
+            <div className="mb-6">
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FiSearch className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search customers..."
+              />
+            </div>
+          </div>
           </div>
           
           <div className="overflow-x-auto">
