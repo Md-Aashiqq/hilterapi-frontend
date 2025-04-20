@@ -26,7 +26,6 @@ export const retrieveBanner = async (id: string) => {
       `/store/banners/${id}`,
       {
         next,
-        cache: "force-cache",
       }
     )
     .then(({ banner }) => banner)
