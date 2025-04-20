@@ -74,7 +74,7 @@ const Hero = () => {
               alt={banner.heading || "Banner image"}
               priority={index === 0}
               fill
-              className="object-contain w-full h-full"
+              className="object-fill w-full h-full"
               quality={90}
               sizes="100vw"
             />

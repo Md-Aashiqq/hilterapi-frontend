@@ -115,10 +115,12 @@ export async function addToCart({
   variantId,
   quantity,
   countryCode,
+  buyNow,
 }: {
   variantId: string
   quantity: number
-  countryCode: string
+  countryCode: string,
+  buyNow: boolean
 }) {
   if (!variantId) {
     throw new Error("Missing variant ID when adding to cart")
@@ -150,6 +152,10 @@ export async function addToCart({
 
       const fulfillmentCacheTag = await getCacheTag("fulfillment")
       revalidateTag(fulfillmentCacheTag)
+
+      if(buyNow){
+        redirect('/cart')
+      }
     })
     .catch(medusaError)
 }

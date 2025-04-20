@@ -34,6 +34,8 @@ export default function ProductActions({
 }: ProductActionsProps) {
   const [options, setOptions] = useState<Record<string, string | undefined>>({})
   const [isAdding, setIsAdding] = useState(false)
+  const [isBuying, setIsBuying] = useState(false)
+  const [buyNow, setBuyNow] = useState(false)
   const countryCode = useParams().countryCode as string
 
   // If there is only 1 variant, preselect the options
@@ -100,19 +102,45 @@ export default function ProductActions({
   const inView = useIntersection(actionsRef, "0px")
 
   // add the selected variant to the cart
-  const handleAddToCart = async () => {
-    if (!selectedVariant?.id) return null
+  // const handleAddToCart = async (val) => {
+  //   if (!selectedVariant?.id) return null
 
-    setIsAdding(true)
+  //   if(val === "buynow") {
+  //     setBuyNow(true)
+  //   }else{
+  //     setBuyNow(false)
+  //   }
+  //   setIsAdding(true)
 
+  //   await addToCart({
+  //     variantId: selectedVariant.id,
+  //     quantity: 1,
+  //     countryCode,
+  //     buyNow,
+  //   })
+
+  //   setIsAdding(false)
+  // }
+  const handleAddToCart = async (val: 'buynow' | 'addtocart'): Promise<void> => {
+    if (!selectedVariant?.id) return;
+  
+    setBuyNow(val === 'buynow');
+    if(val === 'buynow'){
+      setIsBuying(true)
+    }else{
+      setIsAdding(true);
+    }
+    
     await addToCart({
       variantId: selectedVariant.id,
       quantity: 1,
       countryCode,
-    })
-
-    setIsAdding(false)
-  }
+      buyNow: val === 'buynow',
+    });
+  
+    setIsAdding(false);
+    setIsBuying(false)
+  };
 
   return (
     <>
@@ -145,12 +173,12 @@ export default function ProductActions({
             className="w-[50%] bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none"
             href="/cart"
             data-testid="nav-cart-link"
-          >
-            <Button className="w-[100%] p-4 bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none">Buy Now</Button>
-          </LocalizedClientLink> */}
+          > */}
+            <Button onClick={() => handleAddToCart('buynow')} className="w-[50%] p-4 bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none hover:!text-[#fff]" isLoading={isBuying}>Buy Now</Button>
+          {/* </LocalizedClientLink> */}
           <Button
-            className="w-[100%] p-4 bordered border-[#000] !cursor-pointer !rounded-none"
-            onClick={handleAddToCart}
+            className="w-[50%] p-4 bordered border-[#000] !cursor-pointer !rounded-none"
+            onClick={() => handleAddToCart('addtocart')}
             disabled={
               !inStock ||
               !selectedVariant ||
