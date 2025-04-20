@@ -153,9 +153,6 @@ export async function addToCart({
       const fulfillmentCacheTag = await getCacheTag("fulfillment")
       revalidateTag(fulfillmentCacheTag)
 
-      if(buyNow){
-        redirect('/cart')
-      }
     })
     .catch(medusaError)
 }

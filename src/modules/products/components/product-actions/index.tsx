@@ -7,7 +7,7 @@ import { Button } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
-import { useParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
@@ -38,6 +38,7 @@ export default function ProductActions({
   const [buyNow, setBuyNow] = useState(false)
   const countryCode = useParams().countryCode as string
 
+  const router = useRouter();
   // If there is only 1 variant, preselect the options
   useEffect(() => {
     if (product.variants?.length === 1) {
@@ -102,25 +103,7 @@ export default function ProductActions({
   const inView = useIntersection(actionsRef, "0px")
 
   // add the selected variant to the cart
-  // const handleAddToCart = async (val) => {
-  //   if (!selectedVariant?.id) return null
-
-  //   if(val === "buynow") {
-  //     setBuyNow(true)
-  //   }else{
-  //     setBuyNow(false)
-  //   }
-  //   setIsAdding(true)
-
-  //   await addToCart({
-  //     variantId: selectedVariant.id,
-  //     quantity: 1,
-  //     countryCode,
-  //     buyNow,
-  //   })
-
-  //   setIsAdding(false)
-  // }
+  
   const handleAddToCart = async (val: 'buynow' | 'addtocart'): Promise<void> => {
     if (!selectedVariant?.id) return;
   
@@ -138,6 +121,10 @@ export default function ProductActions({
       buyNow: val === 'buynow',
     });
   
+    if (val === 'buynow') {
+      router.push('/cart');
+    }
+
     setIsAdding(false);
     setIsBuying(false)
   };
@@ -169,13 +156,7 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
         <div className="flex justify-between items-center">
-          {/* <LocalizedClientLink
-            className="w-[50%] bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none"
-            href="/cart"
-            data-testid="nav-cart-link"
-          > */}
-            <Button onClick={() => handleAddToCart('buynow')} className="w-[50%] p-4 bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none hover:!text-[#fff]" isLoading={isBuying}>Buy Now</Button>
-          {/* </LocalizedClientLink> */}
+          <Button onClick={() => handleAddToCart('buynow')} className="w-[50%] p-4 bordered border-[#000] bg-[#fff] text-[#000] !cursor-pointer !rounded-none hover:!text-[#fff]" isLoading={isBuying}>Buy Now</Button>
           <Button
             className="w-[50%] p-4 bordered border-[#000] !cursor-pointer !rounded-none"
             onClick={() => handleAddToCart('addtocart')}
