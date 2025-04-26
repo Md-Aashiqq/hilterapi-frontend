@@ -1,4 +1,3 @@
-
 import { Suspense } from "react"
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa"
 import { FiSearch } from "react-icons/fi"
@@ -9,6 +8,7 @@ import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import Image from "next/image"
 import Logo from "../../../../app/assets/Icons/logo.png"
+import ProductSearch from "@modules/home/components/hero/ProductSearch"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
@@ -19,33 +19,54 @@ export default async function Nav() {
       <div className="h-10 bg-gray-100">
         <div className="content-container h-full">
           <div className="flex items-center justify-between w-full h-full 2xsmall:px-0 xsmall:px-10 ">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ui-fg-base"
+            >
               <FaFacebook size={16} />
             </a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
+            <a
+              href="https://whatsapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ui-fg-base"
+            >
               <FaWhatsapp size={16} />
             </a>
             <div className="flex items-center h-full gap-2 bg-[#000] pe-2">
-            <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase flex items-center gap-2"
-              data-testid="nav-store-link"
-            >
-              <div className="p-[6px] "><Image src={Logo} alt="logo" className="w-[30px]" /></div>
-              
-              {/* <LocalizedClientLink
+              <LocalizedClientLink
+                href="/"
+                className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase flex items-center gap-2"
+                data-testid="nav-store-link"
+              >
+                <div className="p-[6px] ">
+                  <Image src={Logo} alt="logo" className="w-[30px]" />
+                </div>
+
+                {/* <LocalizedClientLink
                 href="/"
                 className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
                 data-testid="nav-store-link"
               > */}
-              <p className="!text-[#fff]">HitlerAbi</p>
-              
-            </LocalizedClientLink>
-          </div>
-            <a href="https://instagram.com/the_h.itler_abi_" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
+                <p className="!text-[#fff]">HitlerAbi</p>
+              </LocalizedClientLink>
+            </div>
+            <a
+              href="https://instagram.com/the_h.itler_abi_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ui-fg-base"
+            >
               <FaInstagram size={16} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-ui-fg-base">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ui-fg-base"
+            >
               <FaTwitter size={16} />
             </a>
           </div>
@@ -61,17 +82,11 @@ export default async function Nav() {
             </div>
           </div>
 
-          
-
           <div className="w-full flex items-center gap-x-6 h-full flex-1 basis-0 justify-between text-[14px]">
-          <div className="relative w-full max-w-sm">
-    <input
-      type="search"
-      placeholder="Search products..."
-      className="py-2 px-8 rounded-full bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-300 w-full"
-    />
-    <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
-  </div>
+            <div className="relative w-full max-w-sm">
+              <ProductSearch />
+            </div>
+
             <div className="hidden small:flex items-center gap-x-6 h-full text-[14px] w-full justify-between text-nowrap">
               {/* <div className="relative">
                 <input
@@ -110,60 +125,22 @@ export default async function Nav() {
                 About Us
               </LocalizedClientLink>
               <Suspense
-              fallback={
-                <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
-                  href="/cart"
-                  data-testid="nav-cart-link"
-                >
-                  Cart (0)
-                </LocalizedClientLink>
-              }
-              
-            >
-              <CartButton />
-            </Suspense>
+                fallback={
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base flex gap-2"
+                    href="/cart"
+                    data-testid="nav-cart-link"
+                  >
+                    Cart (0)
+                  </LocalizedClientLink>
+                }
+              >
+                <CartButton />
+              </Suspense>
             </div>
-            
           </div>
         </nav>
-        
       </header>
-      {/* <div className="flex justify-between items-center px-6 py-4 bg-gray-100">
-          <LocalizedClientLink
-            className="hover:text-ui-fg-base"
-            href="/customerlist"
-            data-testid="nav-account-link"
-          >
-            Customer List
-          </LocalizedClientLink>
-          <div className="relative max-w-md mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiSearch className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              // value={searchTerm}
-              // onChange={(e) => setSearchTerm(e.target.value)}
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Search..."
-            />
-          </div>
-          <Suspense
-            fallback={
-              <LocalizedClientLink
-                className="hover:text-ui-fg-base flex gap-2"
-                href="/cart"
-                data-testid="nav-cart-link"
-              >
-                Cart (0)
-              </LocalizedClientLink>
-            }
-            
-          >
-            <CartButton />
-          </Suspense>
-        </div> */}
     </div>
   )
 }
