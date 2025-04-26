@@ -41,6 +41,7 @@ export const listCollections = async (
     )
     .then(({ collections }) => {
       console.log("collections", collections)
+
       return {
         collections,
         count: collections.length,

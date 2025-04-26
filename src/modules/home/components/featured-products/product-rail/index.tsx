@@ -26,7 +26,7 @@ export default async function ProductRail({
   if (!pricedProducts) {
     return null
   }
-
+  console.log("pricedProducts---->", pricedProducts)
   return (
     <div className="py-8">
       <div className="flex justify-between items-center mb-6">
