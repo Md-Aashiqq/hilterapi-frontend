@@ -5,6 +5,13 @@
 .customScrollbar {
     -ms-overflow-style: none;  /* Hides scrollbar for IE & Edge */
     scrollbar-width: none;  /* Hides scrollbar for Firefox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: scroll;
+    width: 30%;
+    height: 350px;
 }
 
 .slick-slide {
@@ -29,4 +36,18 @@
 }
 .slickSlider.slick-next {
     background-color: red;
+}
+
+@media (min-width: 320px) and (max-width: 568px){
+    .customScrollbar {
+        -ms-overflow-style: none;  /* Hides scrollbar for IE & Edge */
+        scrollbar-width: none;  /* Hides scrollbar for Firefox */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow-x: scroll;
+        width: 100%;
+        height: auto;
+    }
 }

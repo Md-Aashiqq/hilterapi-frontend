@@ -24,9 +24,9 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
       
 
       <div
-        className={`flex justify-center items-start relative overflow-x-scroll w-[30%] h-[350px] ${style.customScrollbar}`}
+        className={`${style.customScrollbar}`}
       >
-        <div className="flex flex-col gap-4 p-4">
+        <div className="flex flex-col gap-4 p-4 mobileScreen:!flex-row">
           {images.map((image, index) => (
             <Container
               key={image.id}
@@ -47,7 +47,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           ))}
         </div>
       </div>
-      <div className="w-[60%] 2xsmall:p-0 sm:p-4 flex justify-center rounded-md border border-black-500">
+      <div className="mobileScreen:!w-[100%] w-[60%] 2xsmall:p-0 sm:p-4 flex justify-center rounded-md border border-black-500">
         <div className="w-[300px] 2xsmall:h-[220px] sm:h-[280px] relative">
           {selectedImage && (
             <Image src={selectedImage} alt="Selected Image" layout="fill" objectFit="fill" />
