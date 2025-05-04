@@ -47,9 +47,9 @@ module.exports = {
         "8xl": "100rem",
       },
       screens: {
-        "2xsmall": "320px",
-        mobileScreen: { 'min': '320px', 'max': '568' },
-        gridScreen: { 'min': '320px', 'max': '1023' },
+        "2xsmall": "200px",
+        mobileScreen: { 'min': '200', 'max': '568' },
+        gridScreen: { 'min': '200', 'max': '1023' },
         xsmall: "512px",
         small: "1024px",
         medium: "1280px",
