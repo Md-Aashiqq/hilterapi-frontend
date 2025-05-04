@@ -35,10 +35,11 @@ export default async function ProductRail({
           View all
         </InteractiveLink>
       </div>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <ul className="gridScreen:!flex gridScreen:overflow-x-scroll xsmall:grid sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+
         {pricedProducts &&
           pricedProducts.map((product) => (
-            <li key={product.id} className="animate-fadeIn">
+            <li key={product.id} className="animate-fadeIn gridScreen:!h-[30%]">
               <ProductPreview product={product} region={region} isFeatured />
             </li>
           ))}

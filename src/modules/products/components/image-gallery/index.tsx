@@ -24,7 +24,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
       
 
       <div
-        className={`flex justify-center items-start relative overflow-x-scroll w-[30%] ${style.customScrollbar}`}
+        className={`flex justify-center items-start relative overflow-x-scroll w-[30%] h-[350px] ${style.customScrollbar}`}
       >
         <div className="flex flex-col gap-4 p-4">
           {images.map((image, index) => (

@@ -25,7 +25,7 @@ const ProductSearch = () => {
 
   return (
     <>
-      <div className="relative w-96 mx-auto">
+      <div className="relative w-full mx-auto">
         <div className="relative w-full max-w-sm">
           <input
             type="search"

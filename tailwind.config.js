@@ -48,6 +48,7 @@ module.exports = {
       },
       screens: {
         "2xsmall": "320px",
+        gridScreen: { 'min': '320px', 'max': '1023' },
         xsmall: "512px",
         small: "1024px",
         medium: "1280px",

@@ -21,6 +21,7 @@ export default async function PaginatedProducts({
   categoryId,
   productsIds,
   countryCode,
+  allProductsView
 }: {
   sortBy?: SortOptions
   page: number
@@ -28,6 +29,7 @@ export default async function PaginatedProducts({
   categoryId?: string
   productsIds?: string[]
   countryCode: string
+  allProductsView: boolean
 }) {
   const queryParams: PaginatedProductsParams = {
     limit: 12,
@@ -65,7 +67,8 @@ export default async function PaginatedProducts({
   })
 
   const totalPages = Math.ceil(count / PRODUCT_LIMIT)
-  console.log("products--->", products)
+  console.log("allProductsView--->", allProductsView)
+  // console.log("allProductsView--->", allProductsView)
   return (
     <>
       <ul
@@ -80,7 +83,7 @@ export default async function PaginatedProducts({
               // className={categoryId ? "!h-[100%]" : "!h-[100%]"}
               className={`${style.productCardContainer}`}
             >
-              <ProductPreview product={p} region={region} />
+              <ProductPreview product={p} region={region} allProductsView={allProductsView} />
             </li>
           )
         })}

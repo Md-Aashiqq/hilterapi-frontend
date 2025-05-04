@@ -156,7 +156,19 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
         <div className="flex justify-between items-center">
-          <Button onClick={() => handleAddToCart('buynow')} className="w-[50%] p-4 bordered !border-[#E0E1E2] bg-[#fff] text-[#000] !cursor-pointer !rounded-none hover:!text-[#fff]" isLoading={isBuying}>Buy Now</Button>
+          <Button 
+            onClick={() => handleAddToCart('buynow')} 
+            disabled={
+              !inStock ||
+              !selectedVariant ||
+              !!disabled ||
+              isAdding ||
+              !isValidVariant
+            }
+            className="w-[50%] p-4 bordered !border-[#E0E1E2] bg-[#fff] text-[#000] !cursor-pointer !rounded-none hover:!text-[#fff]" isLoading={isBuying}
+          >
+            Buy Now
+          </Button>
           <Button
             className="w-[50%] p-4 bordered border-[#000] !cursor-pointer !rounded-none"
             onClick={() => handleAddToCart('addtocart')}
