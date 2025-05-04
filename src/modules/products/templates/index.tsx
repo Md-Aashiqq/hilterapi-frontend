@@ -32,7 +32,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
         data-testid="product-container"
       >
-        <div className="flex justify-start items-center w-full relative overflow-hidden md:justify-start 2xsmall:justify-between mobileScreen:!flex-col-reverse">
+        <div className="flex justify-start items-center w-full relative overflow-hidden md:justify-start 2xsmall:justify-center gap:1rem mobileScreen:!flex-col-reverse">
           <ImageGallery images={product?.images || []} />
         </div>
         
