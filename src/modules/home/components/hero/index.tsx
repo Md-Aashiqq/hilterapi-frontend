@@ -46,7 +46,7 @@ const Hero = () => {
 
   if (isLoading || !banners) {
     return (
-      <div className="md:h-[75vh] 2xsmall:h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
+      <div className="md:!h-[75vh] 2xsmall:h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-8 h-8 border-4 border-ui-border-base rounded-full animate-spin border-t-ui-fg-base" />
         </div>
