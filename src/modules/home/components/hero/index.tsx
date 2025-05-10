@@ -60,7 +60,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="aspect-[21/9] md:h-[75vh] 2xsmall:h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
+      <div className="aspect-[21/9] md:!h-[75vh] sm:!h-[75vh] mobileScreen:!h-[40vh] tabletScreen:!h-[50%] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
         <div className="absolute inset-0">
           {banners.map((banner, index) => (
             <div

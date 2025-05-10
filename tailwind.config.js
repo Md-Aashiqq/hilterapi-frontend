@@ -49,6 +49,7 @@ module.exports = {
       screens: {
         "2xsmall": "200px",
         mobileScreen: { 'min': '200', 'max': '568' },
+        tabletScreen: { 'min': '569', 'max': '992' },
         gridScreen: { 'min': '200', 'max': '1023' },
         xsmall: "512px",
         small: "1024px",

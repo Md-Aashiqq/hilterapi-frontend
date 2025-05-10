@@ -35,7 +35,7 @@ export default async function ProductRail({
           View all
         </InteractiveLink>
       </div>
-      <ul className="gridScreen:!flex gridScreen:overflow-x-scroll xsmall:grid sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <ul className="gridScreen:!flex gridScreen:overflow-x-auto xsmall:grid sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 hide-scrollbar">
 
         {pricedProducts &&
           pricedProducts.map((product) => (

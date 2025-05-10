@@ -63,6 +63,16 @@
   color: white !important;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+
 @layer components {
   .content-container {
     @apply max-w-[1440px] w-full mx-auto px-6;
