@@ -10,12 +10,14 @@ export default async function ProductPreview({
   product,
   isFeatured,
   region,
-  allProductsView
+  allProductsView,
+  relatedProductsView,
 }: {
   product: HttpTypes.StoreProduct
   isFeatured?: boolean
   region: HttpTypes.StoreRegion,
-  allProductsView: boolean
+  allProductsView: boolean,
+  relatedProductsView: boolean;
 }) {
   // const pricedProduct = await listProducts({
   //   regionId: region.id,
@@ -32,7 +34,7 @@ export default async function ProductPreview({
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper" className={`${allProductsView ? "xsmall:w-[100%] !h-full" : "gridScreen:!w-[220px]  !h-full"}`}>
+      <div data-testid="product-wrapper" className={`${relatedProductsView ? "w-[220px] h-full" : allProductsView ? "xsmall:w-[100%] !h-full" : "gridScreen:!w-[220px]  !h-full"}`}>
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}

@@ -57,10 +57,11 @@ export default async function RelatedProducts({
         </p>
       </div>
 
-      <ul className="gridScreen:!flex gridScreen:overflow-x-scroll gridScreen:px-[10px] grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8 grid-rows-[repeat(auto-fill,_50%)]">
+      {/* <ul className="gridScreen:!flex gridScreen:overflow-x-auto gridScreen:overflow-y-hidden gridScreen:!h-[300px] xsmall:grid sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 hide-scrollbar"> */}
+      <ul className="w-full min-h-[300px] max-h-[600px] flex flex-wrap gap-4 overflow-y-auto hide-scrollbar">
         {products.map((product) => (
-          <li key={product.id} className="gridScreen:!h-[100%]">
-            <Product region={region} product={product} />
+          <li key={product.id} className="h-[260px]">
+            <Product region={region} product={product} relatedProductsView={true}/>
           </li>
         ))}
       </ul>
