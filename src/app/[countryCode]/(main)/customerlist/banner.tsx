@@ -59,7 +59,7 @@ const CustomerBanner = () => {
   }
   
   return (
-    <div className="md:h-[40vh] 2xsmall:h-[30vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
+    <div className="md:!h-[40vh] sm:!h-[40vh] mobileScreen:!h-[30vh] tabletScreen:!h-[40vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle overflow-hidden">
       <div className="absolute inset-0">
         {banners.map((banner, index) => (
           <div 
