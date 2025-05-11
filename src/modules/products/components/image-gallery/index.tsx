@@ -4,7 +4,7 @@ import { HttpTypes } from "@medusajs/types";
 import { Container } from "@medusajs/ui";
 import Image from "next/image";
 import { useState } from "react";
-import style from "../image-gallery/ImageStyle.module.css";
+import style from "./ImageStyle.module.css";
 
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[];
