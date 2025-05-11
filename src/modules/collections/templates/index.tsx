@@ -11,11 +11,13 @@ export default function CollectionTemplate({
   collection,
   page,
   countryCode,
+  allProductsView,
 }: {
   sortBy?: SortOptions
   collection: HttpTypes.StoreCollection
   page?: string
-  countryCode: string
+  countryCode: string,
+  allProductsView: boolean
 }) {
   const pageNumber = page ? parseInt(page) : 1
   const sort = sortBy || "created_at"
@@ -39,6 +41,7 @@ export default function CollectionTemplate({
             page={pageNumber}
             collectionId={collection.id}
             countryCode={countryCode}
+            allProductsView={allProductsView}
           />
         </Suspense>
       </div>

@@ -1,5 +1,7 @@
 'use client';
 
+import { handleNoteCommand } from '@lib/data/command';
+import { handleGetNotes } from '@lib/data/handleGetNotes';
 import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { AiOutlineSend } from "react-icons/ai";
 
@@ -10,11 +12,12 @@ interface CommandBoxProps {
 const CommandBox: React.FC<CommandBoxProps> = ({ onSubmit }) => {
   const [command, setCommand] = useState<string>('');
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!command.trim()) return;
-    onSubmit?.(command); // optional callback
-    console.log('Customer Command:', command); // replace with API call if needed
+    const result = await handleNoteCommand(command);
+    // alert(result.message);
     setCommand('');
+    const res = await handleGetNotes(); // ✅ await this
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {

@@ -31,10 +31,10 @@ export default async function ProductPreview({
   const { cheapestPrice } = getProductPrice({
     product,
   })
-
+  console.log("allProductsView--->", allProductsView)
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper" className={`${relatedProductsView ? "w-[220px] h-full" : allProductsView ? "xsmall:w-[100%] !h-full" : "gridScreen:!w-[220px]  !h-full"}`}>
+      <div data-testid="product-wrapper" className={`${relatedProductsView ? "w-[220px] h-full" : allProductsView ? "w-[250px] !h-full" : "gridScreen:!w-[220px]  !h-full"}`}>
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}
