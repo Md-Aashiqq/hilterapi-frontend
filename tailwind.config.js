@@ -48,9 +48,9 @@ module.exports = {
       },
       screens: {
         "2xsmall": "200px",
-        mobileScreen: { 'min': '200', 'max': '568' },
-        tabletScreen: { 'min': '569', 'max': '992' },
-        gridScreen: { 'min': '200', 'max': '1023' },
+        mobileScreen: { 'min': '200px', 'max': '568px' },
+        tabletScreen: { 'min': '569px', 'max': '992px' },
+        gridScreen: { 'min': '200px', 'max': '1023px' },
         xsmall: "512px",
         small: "1024px",
         medium: "1280px",
@@ -159,6 +159,7 @@ module.exports = {
         "slide-in": "slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)",
         leave: "leave 150ms ease-in forwards",
       },
+
     },
   },
   plugins: [require("tailwindcss-radix")()],
