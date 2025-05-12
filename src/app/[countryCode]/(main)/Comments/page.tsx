@@ -34,7 +34,7 @@ const CommandList = () => {
         <div className="mb-8">
           <div className="flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg shadow-lg">
             {/* <BsChatLeftText size={32} /> */}
-            <h1 className="text-3xl font-bold">Customer Commands</h1>
+            <h1 className="text-3xl font-bold">Customer Comment</h1>
           </div>
         </div>
 
@@ -43,7 +43,7 @@ const CommandList = () => {
             <div className="flex items-center">
               {/* <HiUsers className="h-6 w-6 text-gray-600 mr-2" /> */}
               <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Commands
+                Comment
               </h3>
             </div>
           </div>
@@ -57,7 +57,7 @@ const CommandList = () => {
                       Date
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Command
+                      Comment
                     </th>
                   </tr>
                 </thead>
