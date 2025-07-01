@@ -30,10 +30,10 @@ export const paymentInfoMap: Record<
     title: "Manual Payment",
     icon: <CreditCard />,
   },
-   pp_razorpay_razorpay: {
+  pp_razorpay_razorpay: {
     title: "Razorpay",
     icon: <CreditCard />,
-  }
+  },
   // Add more payment providers here
 }
 

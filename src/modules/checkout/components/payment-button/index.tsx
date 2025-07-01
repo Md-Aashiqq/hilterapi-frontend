@@ -7,8 +7,7 @@ import { Button } from "@medusajs/ui"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState } from "react"
 import ErrorMessage from "../error-message"
-import  {RazorpayPaymentButton} from "./razorpay-payment-button"
-
+import {RazorpayPaymentButton} from "./razorpay-payment-button"
 
 type PaymentButtonProps = {
   cart: HttpTypes.StoreCart
@@ -42,9 +41,12 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
         <ManualTestPaymentButton notReady={notReady} data-testid={dataTestId} />
       )
     case isRazorpay(paymentSession?.provider_id):
-      return (
-        <RazorpayPaymentButton session={paymentSession} notReady={notReady} cart={cart} />
-      )
+          console.log(`paymentSession: `+JSON.stringify(paymentSession))
+         return paymentSession ? (
+           <RazorpayPaymentButton session={paymentSession} notReady={notReady} cart={cart} />
+         ) : (
+           <Button disabled>Select a payment method</Button>
+         )
     default:
       return <Button disabled>Select a payment method</Button>
   }

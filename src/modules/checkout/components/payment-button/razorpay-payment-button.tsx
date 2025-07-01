@@ -1,9 +1,10 @@
+
 import { Button } from "@medusajs/ui"
 import Spinner from "@modules/common/icons/spinner"
 import React, { useCallback, useEffect, useState } from "react"
 import  {useRazorpay, RazorpayOrderOptions } from "react-razorpay"
 import { HttpTypes } from "@medusajs/types"
-import {  placeOrder } from "@lib/data/cart"
+import {  placeOrder,  } from "@lib/data/cart"
 import { CurrencyCode } from "react-razorpay/dist/constants/currency"
 export const RazorpayPaymentButton = ({
   session,
@@ -20,7 +21,7 @@ export const RazorpayPaymentButton = ({
   const {Razorpay
    } = useRazorpay();
   
-  const [orderData,setOrderData] = useState({id:""})
+  const [orderData,setOrderData] = useState({razorpayOrder:{id:""}})
 
   
   console.log(`session_data: `+JSON.stringify(session))
@@ -31,7 +32,7 @@ export const RazorpayPaymentButton = ({
     })
   }
   useEffect(()=>{
-    setOrderData(session.data as {id:string})
+    setOrderData(session.data as {razorpayOrder:{id:string}})
   },[session.data])
 
   
@@ -39,20 +40,18 @@ export const RazorpayPaymentButton = ({
 
   const handlePayment = useCallback(async() => {
     const onPaymentCancelled = async () => {
-    //   await cancelOrder(session.provider_id).catch(() => {
-       
-    //   })
-       setErrorMessage("PaymentCancelled")
+        setErrorMessage("PaymentCancelled")
         setSubmitting(false)
-    }
+      }
+    
     const options: RazorpayOrderOptions = {
+      key:process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID??process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID??"your_key_id",
       callback_url: `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/razorpay/hooks`,
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY ?? '',
       amount: session.amount*100*100,
-      order_id: orderData.id,
+      order_id: orderData.razorpayOrder.id,
       currency: cart.currency_code.toUpperCase() as CurrencyCode,
       name: process.env.COMPANY_NAME ?? "your company name ",
-      description: `Order number ${orderData.id}`,
+      description: `Order number ${orderData.razorpayOrder.id}`,
       remember_customer:true,
       
 
@@ -86,7 +85,7 @@ export const RazorpayPaymentButton = ({
     
     
     const razorpay = new Razorpay(options);
-    if(orderData.id)
+    if(orderData.razorpayOrder.id)
     razorpay.open();
     razorpay.on("payment.failed", function (response: any) {
       setErrorMessage(JSON.stringify(response.error))
@@ -101,14 +100,17 @@ export const RazorpayPaymentButton = ({
 
     // }
     // )
-  }, [Razorpay, cart.billing_address?.first_name, cart.billing_address?.last_name, cart.currency_code, cart?.email, cart?.shipping_address?.phone, orderData.id, session.amount, session.provider_id]);
+  }, [Razorpay, cart.billing_address?.first_name, 
+    cart.billing_address?.last_name, cart.currency_code,
+     cart?.email, cart?.shipping_address?.phone, orderData.razorpayOrder.id, 
+     session.amount, session.provider_id]);
   console.log("orderData"+JSON.stringify(orderData))
   return (
     <>
       <Button
-        disabled={submitting || notReady || !orderData?.id||orderData.id == ''}
+        disabled={submitting || notReady || !orderData?.razorpayOrder?.id||orderData?.razorpayOrder?.id == ''}
         onClick={()=>{
-          console.log(`processing order id: ${orderData.id}`)
+          console.log(`processing order id: ${orderData.razorpayOrder.id}`)
           handlePayment()}
         }
       >
