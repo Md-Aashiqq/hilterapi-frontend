@@ -211,6 +211,20 @@ export default async function Footer() {
             </div> */}
           </div>
         </div>
+        <div>
+          <ul>
+            <li>
+              <LocalizedClientLink
+                href="/termsandconditions"
+                className="hover:text-ui-fg-base"
+                target="_blank" // Remove this line if you want to open in the same tab
+                rel="noreferrer"
+              >
+                Terms and Conditions
+              </LocalizedClientLink>
+            </li>
+          </ul>
+        </div>
         <div className="flex w-full mb-6 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} HitlerAbi Store. All rights reserved.
