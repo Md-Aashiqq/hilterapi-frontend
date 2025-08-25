@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import styles from './termsandconditions.module.css'
+import React from "react"
+import styles from './termsandcondition.module.css'
 
 const TermsandConditions = () => {
     return(
@@ -40,10 +40,10 @@ const TermsandConditions = () => {
                 <p>To access most features of HitlerAbi Store, you must create an account by providing accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials.</p>
                 
                 <ul>
-                    <li>You must be at least 18 years of age</li>
-                    <li>You must have the legal capacity to enter into binding contracts</li>
-                    <li>You must provide accurate, current, and complete information</li>
-                    <li>You must not use the platform for any illegal or unauthorized purpose</li>
+                    <li className={styles.listItem}>You must be at least 18 years of age</li>
+                    <li className={styles.listItem} >You must have the legal capacity to enter into binding contracts</li>
+                    <li className={styles.listItem}>You must provide accurate, current, and complete information</li>
+                    <li className={styles.listItem}>You must not use the platform for any illegal or unauthorized purpose</li>
                 </ul>
             </div>
         </div>
@@ -90,11 +90,11 @@ const TermsandConditions = () => {
             <div className={styles.subsection}>
                 <h3 className={styles.subsectiontitle}>Shipping Terms</h3>
                 <ul>
-                    <li>All delivery times are estimated and may vary due to factors beyond our control</li>
-                    <li>Shipping charges are calculated based on product weight, dimensions, and delivery location</li>
-                    <li>We ship to all major cities and towns across India</li>
-                    <li>International shipping is currently not available</li>
-                    <li>Address changes are allowed only before order dispatch</li>
+                    <li className={styles.listItem}>All delivery times are estimated and may vary due to factors beyond our control</li>
+                    <li className={styles.listItem}>Shipping charges are calculated based on product weight, dimensions, and delivery location</li>
+                    <li className={styles.listItem}>We ship to all major cities and towns across India</li>
+                    <li className={styles.listItem}>International shipping is currently not available</li>
+                    <li className={styles.listItem}>Address changes are allowed only before order dispatch</li>
                 </ul>
             </div>
 
@@ -110,9 +110,9 @@ const TermsandConditions = () => {
                 <h3 className={styles.subsectiontitle}>Cancellation Policy</h3>
                 <p>You may cancel your order under the following conditions:</p>
                 <ul>
-                    <li><strong>Before Dispatch:</strong> Orders can be cancelled free of charge until they are dispatched</li>
-                    <li><strong>After Dispatch:</strong> Once dispatched, orders cannot be cancelled but may be eligible for return</li>
-                    <li><strong>Refund Timeline:</strong> Cancelled orders will be refunded within 5-7 business days</li>
+                    <li className={styles.listItem}><strong>Before Dispatch:</strong> Orders can be cancelled free of charge until they are dispatched</li>
+                    <li className={styles.listItem}><strong>After Dispatch:</strong> Once dispatched, orders cannot be cancelled but may be eligible for return</li>
+                    <li className={styles.listItem}><strong>Refund Timeline:</strong> Cancelled orders will be refunded within 5-7 business days</li>
                 </ul>
             </div>
 
@@ -121,21 +121,21 @@ const TermsandConditions = () => {
                 <div className={styles.policybox}>
                     <h4>Return Eligibility</h4>
                     <ul>
-                        <li>Returns must be initiated within 7 days of delivery</li>
-                        <li>Items must be unused, undamaged, and in original packaging</li>
-                        <li>Original tags and labels must be attached</li>
-                        <li>Certain items like perishables, intimate apparel, and customized products are non-returnable</li>
+                        <li className={styles.listItem}>Returns must be initiated within 7 days of delivery</li>
+                        <li className={styles.listItem}>Items must be unused, undamaged, and in original packaging</li>
+                        <li className={styles.listItem}>Original tags and labels must be attached</li>
+                        <li className={styles.listItem}>Certain items like perishables, intimate apparel, and customized products are non-returnable</li>
                     </ul>
                 </div>
 
                 <div className={styles.policybox}>
                     <h4>Return Process</h4>
                     <ol>
-                        <li>Log into your account and go to "My Orders"</li>
-                        <li>Select the item you wish to return</li>
-                        <li>Choose return reason and preferred refund method</li>
-                        <li>Schedule pickup or drop-off at nearest collection point</li>
-                        <li>Refund will be processed within 7-10 business days after quality check</li>
+                        <li className={styles.listItem}>Log into your account and go to "My Orders"</li>
+                        <li className={styles.listItem}>Select the item you wish to return</li>
+                        <li className={styles.listItem}>Choose return reason and preferred refund method</li>
+                        <li className={styles.listItem}>Schedule pickup or drop-off at nearest collection point</li>
+                        <li className={styles.listItem}>Refund will be processed within 7-10 business days after quality check</li>
                     </ol>
                 </div>
             </div>
@@ -148,13 +148,13 @@ const TermsandConditions = () => {
                 <h3 className={styles.subsectiontitle}>Accepted Payment Methods</h3>
                 <p>HitlerAbi Store accepts multiple secure payment methods through our certified payment partner Razorpay:</p>
                 <ul>
-                    <li>Credit Cards (Visa, MasterCard, RuPay)</li>
-                    <li>Debit Cards (All major banks)</li>
-                    <li>Net Banking (All major banks)</li>
-                    <li>Digital Wallets (Paytm, PhonePe, Google Pay, etc.)</li>
-                    <li>UPI (Unified Payments Interface)</li>
+                    <li className={styles.listItem}>Credit Cards (Visa, MasterCard, RuPay)</li>
+                    <li className={styles.listItem}>Debit Cards (All major banks)</li>
+                    <li className={styles.listItem}>Net Banking (All major banks)</li>
+                    <li className={styles.listItem}>Digital Wallets (Paytm, PhonePe, Google Pay, etc.)</li>
+                    <li className={styles.listItem}>UPI (Unified Payments Interface)</li>
                     {/* <li>EMI Options (Selected banks and credit cards)</li> --> */}
-                    <li>Cash on Delivery (COD) - Available for orders up to ₹10,000</li>
+                    <li className={styles.listItem}>Cash on Delivery (COD) - Available for orders up to ₹10,000</li>
                 </ul>
             </div>
 
@@ -192,10 +192,10 @@ const TermsandConditions = () => {
             <div className={styles.subsection}>
                 <h3 className={styles.subsectiontitle}>Refund Policy</h3>
                 <ul>
-                    <li><strong>Online Payments:</strong> Refunds processed to original payment method within 5-7 business days</li>
-                    <li><strong>COD Orders:</strong> Refunds credited to provided bank account or digital wallet</li>
-                    <li><strong>Failed Transactions:</strong> Automatic refund within 24-48 hours</li>
-                    <li><strong>Partial Refunds:</strong> Available for damaged or partially delivered orders</li>
+                    <li className={styles.listItem}><strong>Online Payments:</strong> Refunds processed to original payment method within 5-7 business days</li>
+                    <li className={styles.listItem}><strong>COD Orders:</strong> Refunds credited to provided bank account or digital wallet</li>
+                    <li className={styles.listItem}><strong>Failed Transactions:</strong> Automatic refund within 24-48 hours</li>
+                    <li className={styles.listItem}><strong>Partial Refunds:</strong> Available for damaged or partially delivered orders</li>
                 </ul>
             </div>
         </div>
@@ -208,10 +208,10 @@ const TermsandConditions = () => {
                 
                 <h3 className={styles.subsectiontitle}>Data Collection and Usage</h3>
                 <ul>
-                    <li>Personal information for account creation and order processing</li>
-                    <li>Payment information processed securely through Razorpay</li>
-                    <li>Usage data to improve our services and personalize experience</li>
-                    <li>Communication preferences for order updates and promotional content</li>
+                    <li className={styles.listItem}>Personal information for account creation and order processing</li>
+                    <li className={styles.listItem}>Payment information processed securely through Razorpay</li>
+                    <li className={styles.listItem}>Usage data to improve our services and personalize experience</li>
+                    <li className={styles.listItem}>Communication preferences for order updates and promotional content</li>
                 </ul>
             </div>
         </div>
@@ -222,10 +222,10 @@ const TermsandConditions = () => {
             <div className={styles.subsection}>
                 <p>HitlerAbi Store acts as an intermediary platform connecting buyers and sellers. While we strive to ensure quality and reliability:</p>
                 <ul>
-                    <li>We are not liable for defects in products sold by third-party sellers</li>
-                    <li>Our liability is limited to the value of the specific transaction</li>
-                    <li>We do not guarantee uninterrupted or error-free service</li>
-                    <li>Force majeure events are beyond our control and responsibility</li>
+                    <li className={styles.listItem}>We are not liable for defects in products sold by third-party sellers</li>
+                    <li className={styles.listItem}>Our liability is limited to the value of the specific transaction</li>
+                    <li className={styles.listItem}>We do not guarantee uninterrupted or error-free service</li>
+                    <li className={styles.listItem}>Force majeure events are beyond our control and responsibility</li>
                 </ul>
             </div>
         </div>
@@ -246,7 +246,7 @@ const TermsandConditions = () => {
             </div>
         </div>
 
-        <div className={styles.contactinfo}>
+        {/* <div className={styles.contactinfo}>
             <h3>Contact Us</h3>
             <p>If you have any questions about these Terms and Conditions, please contact us:</p>
             <div className={styles.contactdetails}>
@@ -263,7 +263,7 @@ const TermsandConditions = () => {
                     <span>India</span>
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
         </>
     )

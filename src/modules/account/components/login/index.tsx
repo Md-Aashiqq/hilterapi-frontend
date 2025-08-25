@@ -3,6 +3,7 @@ import { LOGIN_VIEW } from "@modules/account/templates/login-template"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import Input from "@modules/common/components/input"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { useActionState } from "react"
 
 type Props = {
@@ -57,6 +58,20 @@ const Login = ({ setCurrentView }: Props) => {
         </button>
         .
       </span>
+      <div>
+          <ul>
+            <li>
+              <LocalizedClientLink
+                href="/termsandconditions"
+                className="hover:text-ui-fg-base"
+                target="_blank" // Remove this line if you want to open in the same tab
+                rel="noreferrer"
+              >
+                Terms and Conditions
+              </LocalizedClientLink>
+            </li>
+          </ul>
+        </div>
     </div>
   )
 }
