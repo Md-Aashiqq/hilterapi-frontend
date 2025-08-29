@@ -211,16 +211,47 @@ export default async function Footer() {
             </div> */}
           </div>
         </div>
-        <div>
-          <ul>
+        <div className="flex flex-col gap-y-2">
+          <span className="txt-small-plus txt-ui-fg-base !text-[14px]">Policies</span>
+          <ul className="grid grid-cols-2 gap-2 text-ui-fg-subtle txt-small">
             <li>
               <LocalizedClientLink
                 href="/termsandconditions"
                 className="hover:text-ui-fg-base"
-                target="_blank" // Remove this line if you want to open in the same tab
-                rel="noreferrer"
               >
                 Terms and Conditions
+              </LocalizedClientLink>
+            </li>
+            <li>
+              <LocalizedClientLink
+                href="/privacy-policy"
+                className="hover:text-ui-fg-base"
+              >
+                Privacy Policy
+              </LocalizedClientLink>
+            </li>
+            <li>
+              <LocalizedClientLink
+                href="/refund-policy"
+                className="hover:text-ui-fg-base"
+              >
+                Refund Policy
+              </LocalizedClientLink>
+            </li>
+            <li>
+              <LocalizedClientLink
+                href="/shipping-policy"
+                className="hover:text-ui-fg-base"
+              >
+                Shipping Policy
+              </LocalizedClientLink>
+            </li>
+            <li>
+              <LocalizedClientLink
+                href="/contact"
+                className="hover:text-ui-fg-base"
+              >
+                Contact Us
               </LocalizedClientLink>
             </li>
           </ul>
