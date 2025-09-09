@@ -1,4 +1,6 @@
 
+"use client";
+
 import { Button } from "@medusajs/ui"
 import Spinner from "@modules/common/icons/spinner"
 import React, { useCallback, useEffect, useState } from "react"
