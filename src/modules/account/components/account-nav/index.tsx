@@ -21,6 +21,7 @@ const AccountNav = ({
   const { countryCode } = useParams() as { countryCode: string }
 
   const handleLogout = async () => {
+    localStorage.clear()
     await signout(countryCode)
   }
 
@@ -123,40 +124,52 @@ const AccountNav = ({
                   Overview
                 </AccountNavLink>
               </li>
-              <li>
+              <li className="hover:bg-gray-100 hover:px-[9px] hover:py-[2px] transition-all duration-300 ease-in-out">
                 <AccountNavLink
                   href="/account/profile"
                   route={route!}
                   data-testid="profile-link"
                 >
-                  Profile
+                  <div className="flex items-center gap-x-2">
+                    <User size={20} />
+                    <span>Profile</span>
+                  </div>
                 </AccountNavLink>
               </li>
-              <li>
+              <li className="hover:bg-gray-100 hover:px-[9px] hover:py-[2px] transition-all duration-300 ease-in-out">
                 <AccountNavLink
                   href="/account/addresses"
                   route={route!}
                   data-testid="addresses-link"
                 >
-                  Addresses
+                  <div className="flex items-center gap-x-2">
+                    <MapPin size={20} />
+                    <span>Addresses</span>
+                  </div>
                 </AccountNavLink>
               </li>
-              <li>
+              <li className="hover:bg-gray-100 hover:px-[9px] hover:py-[2px] transition-all duration-300 ease-in-out">
                 <AccountNavLink
                   href="/account/orders"
                   route={route!}
                   data-testid="orders-link"
                 >
-                  Orders
+                  <div className="flex items-center gap-x-2">
+                    <Package size={20} />
+                    <span>Orders</span>
+                  </div>
                 </AccountNavLink>
               </li>
-              <li className="text-grey-700">
+              <li className="text-grey-700 hover:bg-gray-100 hover:px-[9px] hover:py-[2px] transition-all duration-300 ease-in-out">
                 <button
                   type="button"
                   onClick={handleLogout}
                   data-testid="logout-button"
                 >
-                  Log out
+                  <div className="flex items-center gap-x-2">
+                    <ArrowRightOnRectangle />
+                    <span>Log out</span>
+                  </div>
                 </button>
               </li>
             </ul>
