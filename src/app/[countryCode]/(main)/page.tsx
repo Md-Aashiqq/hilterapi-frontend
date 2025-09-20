@@ -32,8 +32,8 @@ export default async function Home(props: {
   return (
     <>
       <Hero />
-      <div className="max-w-[1440px] mx-auto px-4 py-12">
-        <ul className="grid grid-cols-1 gap-y-8">
+      <div className="max-w-[1440px] mx-auto px-4 py-12 overflow-hidden">
+        <ul className="">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>

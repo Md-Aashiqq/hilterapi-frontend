@@ -58,9 +58,11 @@ export default async function RelatedProducts({
       </div>
 
       {/* <ul className="gridScreen:!flex gridScreen:overflow-x-auto gridScreen:overflow-y-hidden gridScreen:!h-[300px] xsmall:grid sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 hide-scrollbar"> */}
-      <ul className="w-full min-h-[300px] max-h-[600px] flex flex-wrap gap-4 overflow-y-auto hide-scrollbar">
+      {/* <ul className="w-full min-h-[300px] max-h-[600px] flex flex-wrap gap-4 overflow-y-auto hide-scrollbar"> */}
+      <ul className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
         {products.map((product) => (
-          <li key={product.id} className="h-[260px]">
+          // <li key={product.id} className="h-[260px]">
+          <li key={product.id} className="flex-none w-40 sm:w-44 md:w-48 lg:w-52">
             <Product region={region} product={product} relatedProductsView={true}/>
           </li>
         ))}

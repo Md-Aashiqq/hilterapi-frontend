@@ -24,7 +24,7 @@ const StoreTemplate = ({
       data-testid="category-container"
     >
       <RefinementList sortBy={sort} />
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <div className="mb-8 text-2xl-semi">
           <h1 data-testid="store-page-title">All products</h1>
         </div>

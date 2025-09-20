@@ -73,7 +73,8 @@ export default async function PaginatedProducts({
     <>
       <ul
         // className="allProductsContainer grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8 grid-rows-[repeat(auto-fill,_50%)]"
-        className={`${style.allProductsContainer}`}
+        // className={`${style.allProductsContainer}`}
+        className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide"
         data-testid="products-list"
       >
         {products.map((p) => {
@@ -81,7 +82,8 @@ export default async function PaginatedProducts({
             <li 
               key={p.id} 
               // className={categoryId ? "!h-[100%]" : "!h-[100%]"}
-              className={`${style.productCardContainer}`}
+              // className={`${style.productCardContainer}`}
+              className="flex-none w-40 sm:w-44 md:w-48 lg:w-52"
             >
               <ProductPreview product={p} region={region} allProductsView={allProductsView} />
             </li>
