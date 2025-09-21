@@ -125,7 +125,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
     gift_card_total,
     shipping_subtotal,
   } = totals
-
+  console.log("shipping_subtotal121--->",shipping_subtotal)
   const hasDiscounts = !!discount_total || !!gift_card_total
   const savings = (discount_total ?? 0) + (gift_card_total ?? 0)
 

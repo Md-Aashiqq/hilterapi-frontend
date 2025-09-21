@@ -120,7 +120,7 @@ export default function CheckoutLayout({
                 </div>
                 <div className="hidden sm:block">
                   <div className="text-lg lg:text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
-                    Your Store
+                    HitlerAbi
                   </div>
                   <div className="text-xs text-gray-500">
                     Secure Checkout
@@ -212,7 +212,7 @@ export default function CheckoutLayout({
             <div className="text-center text-xs text-gray-400 space-y-2">
               <p>Your payment information is encrypted and secure</p>
               <div className="flex items-center justify-center gap-4">
-                <span>© 2024 Your Store</span>
+                <span>© 2025 HitlerAbi</span>
                 <span>•</span>
                 <LocalizedClientLink href="/privacy" className="hover:text-gray-600 transition-colors">
                   Privacy Policy
