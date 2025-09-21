@@ -512,7 +512,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
   return (
     <div className="w-full">
-      <div className="flex gap-4 justiy-center scrollbar-hide">
+      <div className="flex gap-4 justify-center scrollbar-hide">
         {/* Thumbnail Sidebar - Amazon Style */}
         {images.length >= 0 && (
           <div className="flex flex-col gap-2 w-16 sm:w-20">
