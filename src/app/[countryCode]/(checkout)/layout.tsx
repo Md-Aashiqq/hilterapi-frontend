@@ -204,9 +204,9 @@ export default function CheckoutLayout({
             </div>
 
             {/* CTA */}
-            <div className="text-center">
+            {/* <div className="text-center">
               <MedusaCTA />
-            </div>
+            </div> */}
 
             {/* Additional Footer Info */}
             <div className="text-center text-xs text-gray-400 space-y-2">
