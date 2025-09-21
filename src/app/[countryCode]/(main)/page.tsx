@@ -32,7 +32,7 @@ export default async function Home(props: {
   return (
     <>
       <Hero />
-      <div className="max-w-[1440px] mx-auto px-4 py-12 overflow-hidden">
+      <div className="max-w-[96%] mx-auto px-4 py-12 overflow-hidden">
         <ul className="">
           <FeaturedProducts collections={collections} region={region} />
         </ul>

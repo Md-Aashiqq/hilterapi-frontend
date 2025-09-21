@@ -629,12 +629,13 @@ export default async function Nav() {
     <div className="sticky top-0 inset-x-0 z-50 group">
       {/* Top Header with Social Media - Mobile Optimized */}
       <div className="h-10 sm:h-12 bg-gradient-to-r from-gray-900 via-black to-gray-900 shadow-lg">
-        <div className="content-container h-full">
+        <div className="h-full">
           <div className="flex items-center justify-between w-full h-full px-2 sm:px-4 lg:px-8">
-            
             {/* Social Media Icons - Left */}
             <div className="flex items-center gap-2 sm:gap-4">
-              <span className="text-white/70 text-xs font-medium hidden md:block">Follow us:</span>
+              <span className="text-white/70 text-xs font-medium hidden md:block">
+                Follow us:
+              </span>
               <div className="flex items-center gap-1 sm:gap-3">
                 <a
                   href="https://facebook.com"
@@ -683,16 +684,16 @@ export default async function Nav() {
             >
               <div className="relative">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 p-1 sm:p-1.5 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <Image 
-                    src={Logo} 
-                    alt="logo" 
-                    className="w-full h-full object-contain filter brightness-0 invert" 
+                  <Image
+                    src={Logo}
+                    alt="logo"
+                    className="w-full h-full object-contain filter brightness-0 invert"
                   />
                 </div>
                 <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse" />
               </div>
               <span className="text-white font-bold text-sm sm:text-lg tracking-wide group-hover:text-blue-200 transition-colors duration-300">
-                HitlerAbi
+                Your Store
               </span>
             </LocalizedClientLink>
 
@@ -700,13 +701,12 @@ export default async function Nav() {
             <div className="flex items-center gap-2 sm:gap-4 text-white/70 text-xs">
               <div className="w-px h-3 sm:h-4 bg-white/20 hidden sm:block" />
               <span className="hidden lg:block text-xs">24/7 Support</span>
-              <span className="block lg:hidden text-xs">24/7 Support</span>
+              <span className="block lg:hidden text-xs">Support</span>
             </div>
           </div>
         </div>
       </div>
 
-      
       {/* Main Header - Mobile Optimized */}
       {/* <header className="relative h-16 sm:h-20 mx-auto bg-white/95 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
         <nav className="content-container flex items-center justify-between w-full h-full px-2 sm:px-4 lg:px-8">
@@ -841,118 +841,114 @@ export default async function Nav() {
       </header> */}
 
       <header className="relative h-16 sm:h-20 mx-auto bg-white/95 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
-  <nav className="content-container flex items-center justify-between w-full h-full px-2 sm:px-4 lg:px-8">
-    
-    {/* Left - Menu */}
-    <div className="flex items-center">
-      <div className="h-full flex items-center">
-        <SideMenu regions={regions} />
-      </div>
-    </div>
-
-    {/* Center Content - Different layouts for mobile vs desktop */}
-    
-    {/* Mobile/Tablet Layout (below 768px) */}
-    <div className="flex md:hidden items-center gap-x-4 h-full flex-1 basis-0 justify-between">
-      <div className="relative w-full max-w-sm">
-        <ProductSearch />
-      </div>
-      
-      {/* Mobile Action Buttons */}
-      <div className="flex items-center gap-2">
-        {/* Cart Button - Always Visible on Mobile */}
-        <Suspense
-          fallback={
-            <div className="group relative p-2 rounded-lg bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 transition-all duration-200">
-              <FiShoppingBag className="w-5 h-5 text-gray-600 group-hover:text-blue-500 transition-colors duration-200" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                0
-              </span>
+        <nav className="flex items-center justify-between w-full h-full px-2 sm:px-4 lg:px-8">
+          {/* Left - Menu */}
+          <div className="flex items-center">
+            <div className="h-full flex items-center">
+              <SideMenu regions={regions} />
             </div>
-          }
-        >
-          <div className="relative">
-            <CartButton />
           </div>
-        </Suspense>
 
-        {/* User Account Button - Mobile */}
-        <LocalizedClientLink
-          href="/account"
-          className="group relative p-2 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-        >
-          <FiUser className="w-5 h-5" />
-          <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-        </LocalizedClientLink>
-      </div>
-    </div>
+          {/* Center Content - Different layouts for mobile vs desktop */}
 
-    {/* Desktop Layout (768px and above) */}
-    <div className="hidden md:flex items-center gap-x-6 h-full flex-1 basis-0 justify-between text-[14px]">
-      <div className="relative w-full max-w-sm">
-        <ProductSearch />
-      </div>
+          {/* Mobile/Tablet Layout (below 768px) */}
+          <div className="flex md:hidden items-center gap-x-4 h-full flex-1 basis-0 justify-between">
+            <div className="relative w-full max-w-sm">
+              <ProductSearch />
+            </div>
 
-      <div className="flex items-center gap-x-6 h-full text-[14px] justify-between text-nowrap">
-        <LocalizedClientLink
-          className="hover:text-ui-fg-base"
-          href="/customerlist"
-          data-testid="nav-account-link"
-        >
-          Customer List
-        </LocalizedClientLink>
-        <LocalizedClientLink
-          className="hover:text-ui-fg-base"
-          href="/store"
-          data-testid="nav-account-link"
-        >
-          Store
-        </LocalizedClientLink>
-        <LocalizedClientLink
-          className="hover:text-ui-fg-base"
-          href="/account"
-          data-testid="nav-account-link"
-        >
-          Account
-        </LocalizedClientLink>
-        <LocalizedClientLink
-          className="hover:text-ui-fg-base"
-          href="/aboutus"
-          data-testid="nav-account-link"
-        >
-          About Us
-        </LocalizedClientLink>
-        <Suspense
-          fallback={
-            <LocalizedClientLink
-              className="hover:text-ui-fg-base flex gap-2"
-              href="/cart"
-              data-testid="nav-cart-link"
-            >
-              Cart (0)
-            </LocalizedClientLink>
-          }
-        >
-          <CartButton />
-        </Suspense>
-      </div>
-    </div>
+            {/* Mobile Action Buttons */}
+            <div className="flex items-center gap-2">
+              {/* Cart Button - Always Visible on Mobile */}
+              <Suspense
+                fallback={
+                  <div className="group relative p-2 rounded-lg bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 transition-all duration-200">
+                    <FiShoppingBag className="w-5 h-5 text-gray-600 group-hover:text-blue-500 transition-colors duration-200" />
+                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                      0
+                    </span>
+                  </div>
+                }
+              >
+                <div className="relative">
+                  <CartButton />
+                </div>
+              </Suspense>
 
-    {/* Desktop Action Buttons (768px and above) */}
-    {/* <div className="hidden md:flex items-center gap-2 sm:gap-4 lg:gap-6"> */}
-    <div className="hidden md:flex items-center gap-x-6 h-full flex-1 basis-0 justify-between text-[14px]">
+              {/* User Account Button - Mobile */}
+              <LocalizedClientLink
+                href="/account"
+                className="group relative p-2 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <FiUser className="w-5 h-5" />
+                <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              </LocalizedClientLink>
+            </div>
+          </div>
 
-      
-      {/* Wishlist Button - Desktop only */}
-      {/* <button className="group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-50 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-200 transform hover:scale-105">
+          {/* Desktop Layout (768px and above) */}
+          <div className="hidden md:flex items-center gap-x-6 h-full flex-1 basis-0 justify-between text-[14px]">
+            <div className="relative w-full max-w-sm">
+              <ProductSearch />
+            </div>
+
+            <div className="flex items-center gap-x-6 h-full text-[14px] justify-between text-nowrap">
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/customerlist"
+                data-testid="nav-account-link"
+              >
+                Customer List
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/store"
+                data-testid="nav-account-link"
+              >
+                Store
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/account"
+                data-testid="nav-account-link"
+              >
+                Account
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/aboutus"
+                data-testid="nav-account-link"
+              >
+                About Us
+              </LocalizedClientLink>
+              <Suspense
+                fallback={
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base flex gap-2"
+                    href="/cart"
+                    data-testid="nav-cart-link"
+                  >
+                    Cart (0)
+                  </LocalizedClientLink>
+                }
+              >
+                <CartButton />
+              </Suspense>
+            </div>
+          </div>
+
+          {/* Desktop Action Buttons (768px and above) */}
+          <div className="hidden md:flex items-center gap-2 sm:gap-4 lg:gap-6">
+            {/* Wishlist Button - Desktop only */}
+            {/* <button className="group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-50 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-200 transform hover:scale-105">
         <FiHeart className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-red-500 transition-colors duration-200" />
         <span className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
           3
         </span>
       </button> */}
 
-      {/* Cart Button - Desktop */}
-      {/* <Suspense
+            {/* Cart Button - Desktop */}
+            {/* <Suspense
         fallback={
           <div className="group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 transition-all duration-200 transform hover:scale-105">
             <FiShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-blue-500 transition-colors duration-200" />
@@ -967,21 +963,20 @@ export default async function Nav() {
         </div>
       </Suspense> */}
 
-      {/* User Account Button - Desktop */}
-      <LocalizedClientLink
-        href="/account"
-        className="group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-        // className=""
-      >
-        <FiUser className="w-4 h-4 sm:w-5 sm:h-5" />
-        <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-      </LocalizedClientLink>
-    </div>
-  </nav>
+            {/* User Account Button - Desktop */}
+            <LocalizedClientLink
+              href="/account"
+              className="group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <FiUser className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            </LocalizedClientLink>
+          </div>
+        </nav>
 
-  {/* Bottom border gradient */}
-  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-</header>
+        {/* Bottom border gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+      </header>
 
       {/* Mobile/Tablet Navigation Bar - Only show when desktop nav is hidden */}
       {/* <div className="hidden sm:block xl:hidden bg-white border-t border-gray-200 px-2 py-3 shadow-lg">
