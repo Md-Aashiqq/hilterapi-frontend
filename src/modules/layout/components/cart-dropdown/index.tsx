@@ -477,11 +477,7 @@ const CartDropdown = ({
                     {/* Go to Cart Button */}
                     <LocalizedClientLink href="/cart" passHref>
                       <Button
-                        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 
-                          hover:from-blue-700 hover:to-blue-800 text-white font-semibold
-                          py-3 px-6 rounded-lg transition-all duration-200 
-                          transform hover:scale-[1.02] hover:shadow-lg
-                          focus:outline-none focus:ring-4 focus:ring-blue-500/25"
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                         size="large"
                         data-testid="go-to-cart-button"
                       >
