@@ -295,7 +295,7 @@ export default async function Footer() {
     },
     {
       label: "Email:",
-      value: "support@hitlerabi.com",
+      value: "hitlerabi63@gmail.com",
       icon: FiMail,
     },
     {
@@ -511,7 +511,7 @@ export default async function Footer() {
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-400">We Accept:</span>
               <div className="flex items-center gap-2">
-                {['Visa', 'MC', 'PayPal', 'GPay'].map((method) => (
+                {['Visa', 'Razor Pay', 'PayPal', 'GPay'].map((method) => (
                   <div
                     key={method}
                     className="px-3 py-1 bg-white/10 rounded-md text-xs font-medium text-gray-300 backdrop-blur-sm"
