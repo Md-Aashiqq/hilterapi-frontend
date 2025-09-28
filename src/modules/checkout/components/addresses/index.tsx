@@ -308,7 +308,7 @@ const Addresses = ({
           </div>
         </div>
 
-        <div className="p-6">
+        <div className="p-2">
           {isOpen ? (
             <form action={handleFormSubmit}>
               <div className="space-y-8">

@@ -374,7 +374,7 @@
 // }
 
 import { Suspense } from "react"
-import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa"
 import { FiSearch, FiShoppingBag, FiUser, FiHeart } from "react-icons/fi"
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
@@ -428,12 +428,12 @@ export default async function Nav() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative p-1.5 sm:p-2 rounded-full bg-white/10 hover:bg-blue-400 transition-all duration-300 transform hover:scale-110"
                 >
-                  <FaTwitter className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-white transition-colors" />
+                  <FaYoutube className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-white transition-colors" />
                   <div className="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </a>
               </div>
@@ -511,13 +511,13 @@ export default async function Nav() {
               </Suspense>
 
               {/* User Account Button - Mobile */}
-              <LocalizedClientLink
+              {/* <LocalizedClientLink
                 href="/account"
                 className="group relative p-2 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <FiUser className="w-5 h-5" />
                 <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-              </LocalizedClientLink>
+              </LocalizedClientLink> */}
             </div>
           </div>
 

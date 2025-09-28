@@ -344,8 +344,8 @@ const CartDropdown = ({
         >
           <PopoverPanel
             static
-            className="absolute top-[calc(100%+8px)] right-0 
-              w-[320px] sm:w-[380px] md:w-[420px]
+            className="absolute top-[calc(100%+16px)] right-0 
+              w-[305px] sm:w-[380px] md:w-[420px]
               bg-white border border-gray-200 rounded-xl shadow-2xl
               backdrop-blur-sm bg-white/95
               max-h-[80vh] flex flex-col

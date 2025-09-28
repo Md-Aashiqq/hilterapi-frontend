@@ -145,7 +145,7 @@ export default async function ProductRail({
       <div className="relative">
         <ul className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
           {pricedProducts.map((product, index) => (
-            <li key={product.id} className="flex-none w-40 sm:w-44 md:w-48 lg:w-52">
+            <li key={product.id} className="flex-none w-48 sm:w-48 md:w-50 lg:w-52">
               <div className="h-[100%]">
                 <ProductPreview 
                   product={product} 

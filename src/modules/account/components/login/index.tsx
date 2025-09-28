@@ -95,7 +95,7 @@ const Login = ({ setCurrentView }: Props) => {
   const [message, formAction] = useActionState(login, null)
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl">
       <div className="w-full max-w-md p-6 sm:p-8 space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">

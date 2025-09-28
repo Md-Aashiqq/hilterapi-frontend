@@ -55,7 +55,7 @@
 // }
 
 // export default ItemsTemplate
-
+// ----------------------------------------------------------------------------
 // import repeat from "@lib/util/repeat"
 // import { HttpTypes } from "@medusajs/types"
 // import { Heading, Table } from "@medusajs/ui"
@@ -259,6 +259,9 @@
 
 // export default ItemsTemplate
 
+// ---------------------------------------------------------------------------------------------------
+"use client"
+
 import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
 import { Heading, Table } from "@medusajs/ui"
@@ -266,6 +269,12 @@ import { FiShoppingCart, FiPackage } from "react-icons/fi"
 
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
+import DeleteButton from "@modules/common/components/delete-button"
+import { updateLineItem } from "@lib/data/cart"
+import { useState } from "react"
+import Spinner from "@modules/common/icons/spinner"
+import LineItemPrice from "@modules/common/components/line-item-price"
+import LineItemUnitPrice from "@modules/common/components/line-item-unit-price"
 
 type ItemsTemplateProps = {
   cart?: HttpTypes.StoreCart
@@ -273,9 +282,31 @@ type ItemsTemplateProps = {
 
 // Mobile Item Component (without table structure)
 const MobileCartItem = ({ item, currencyCode }) => {
+    const [updating, setUpdating] = useState(false)
+      const [error, setError] = useState<string | null>(null)
+    
+      const changeQuantity = async (quantity: number) => {
+        if (quantity < 1) return
+        
+        setError(null)
+        setUpdating(true)
+    
+        await updateLineItem({
+          lineId: item.id,
+          quantity,
+        })
+          .catch((err) => {
+            setError(err.message)
+          })
+          .finally(() => {
+            setUpdating(false)
+          })
+      }
+    
+      const maxQtyFromInventory = 10
+      const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
   return (
     <div className="flex space-x-4">
-      {/* Product Image */}
       <div className="flex-shrink-0 w-20 h-20 bg-gray-100 rounded-lg overflow-hidden">
         <img 
           src={item.thumbnail} 
@@ -284,7 +315,6 @@ const MobileCartItem = ({ item, currencyCode }) => {
         />
       </div>
       
-      {/* Product Details */}
       <div className="flex-1 min-w-0 space-y-3">
         <div>
           <h3 className="text-sm font-medium text-gray-900 truncate">
@@ -297,43 +327,71 @@ const MobileCartItem = ({ item, currencyCode }) => {
           )}
         </div>
         
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-end justify-between gap-1">
           <div className="flex items-center space-x-3">
             <span className="text-sm text-gray-600">Qty:</span>
             <div className="flex items-center space-x-2">
-              <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors">
+              <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                      onClick={() => changeQuantity(item.quantity - 1)}
+              disabled={item.quantity <= 1 || updating}
+                  >
                 <span className="text-lg leading-none">−</span>
               </button>
               <span className="w-8 text-center text-sm font-medium">
-                {item.quantity}
+                {updating ? (
+                  <div className="flex justify-center">
+                    <Spinner className="w-4 h-4" />
+                  </div>
+                ) : (
+                  item.quantity
+                )}
               </span>
-              <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors">
+              <button 
+                    onClick={() => changeQuantity(item.quantity + 1)}
+                    disabled={item.quantity >= maxQuantity || updating}
+                 className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                >
                 <span className="text-lg leading-none">+</span>
               </button>
             </div>
           </div>
           
           <div className="text-right">
-            <div className="text-sm text-gray-500">
-              {formatPrice(item.unit_price, currencyCode)} each
+            <div className="text-sm text-gray-500 flex items-center gap-1">
+              {/* {formatPrice(item.unit_price, currencyCode)} each */}
+              <LineItemUnitPrice
+                  item={item}
+                  style="tight"
+                  currencyCode={currencyCode}
+                /> each
             </div>
             <div className="text-lg font-bold text-gray-900">
-              {formatPrice(item.total, currencyCode)}
+              {/* {formatPrice(item.total, currencyCode)} */}
+               <LineItemPrice
+                  item={item}
+                  style="tight"
+                  currencyCode={currencyCode}
+                />
             </div>
           </div>
         </div>
         
-        <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-          <button className="text-red-600 text-sm hover:text-red-800 transition-colors">
+        <div className="flex items-center gap-1 pt-2 border-t border-gray-100">
+          {/* <button className="text-red-600 text-sm hover:text-red-800 transition-colors">
             Remove
-          </button>
+          </button> */}
+          <DeleteButton 
+            id={item.id} 
+            className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+            data-testid="product-delete-button"
+          /> Remove
         </div>
       </div>
     </div>
   )
 }
 
-// Helper function for price formatting
+// // Helper function for price formatting
 const formatPrice = (amount, currencyCode) => {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',

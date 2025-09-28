@@ -83,7 +83,7 @@ export default async function PaginatedProducts({
               key={p.id} 
               // className={categoryId ? "!h-[100%]" : "!h-[100%]"}
               // className={`${style.productCardContainer}`}
-              className="flex-none w-40 sm:w-44 md:w-48 lg:w-52"
+              className="flex-none w-48 sm:w-48 md:w-50 lg:w-52"
             >
               <ProductPreview product={p} region={region} allProductsView={allProductsView} />
             </li>

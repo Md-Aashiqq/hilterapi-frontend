@@ -270,7 +270,7 @@
 import { listCategories } from "@lib/data/categories"
 import { listCollections } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
-import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa"
 import { FiMail, FiPhone, FiMapPin, FiClock, FiArrowRight } from "react-icons/fi"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -308,7 +308,7 @@ export default async function Footer() {
   const socialLinks = [
     { name: "Facebook", icon: FaFacebook, url: "https://facebook.com", color: "hover:text-blue-600" },
     { name: "Instagram", icon: FaInstagram, url: "https://instagram.com/the_h.itler_abi_", color: "hover:text-pink-600" },
-    { name: "Twitter", icon: FaTwitter, url: "https://twitter.com", color: "hover:text-blue-400" },
+    { name: "Youtube", icon: FaYoutube, url: "https://youtube.com", color: "hover:text-blue-400" },
     { name: "WhatsApp", icon: FaWhatsapp, url: "https://whatsapp.com", color: "hover:text-green-500" },
   ]
 

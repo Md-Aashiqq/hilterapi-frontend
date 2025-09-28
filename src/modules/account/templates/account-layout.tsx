@@ -27,7 +27,7 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({
           </div>
 
           <div className="flex-1 min-w-0">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 small:p-8">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
               {children}
             </div>
           </div>

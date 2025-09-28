@@ -38,7 +38,7 @@ const AboutUs = () => {
           }} />
         </div>
 
-        <div className="relative container mx-auto px-6 lg:px-8">
+        <div className="relative mx-auto px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
               About{" "}
@@ -55,8 +55,8 @@ const AboutUs = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="py-16 bg-white/50 backdrop-blur-sm">
-        <div className="container mx-auto px-6 lg:px-8">
+      <div className="py-10 bg-white/50 backdrop-blur-sm">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon
@@ -76,7 +76,7 @@ const AboutUs = () => {
 
       {/* Story Section */}
       <div className="py-20 lg:py-28">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
@@ -121,7 +121,7 @@ const AboutUs = () => {
 
       {/* Values Section */}
       <div className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Values
@@ -149,8 +149,8 @@ const AboutUs = () => {
       </div>
 
       {/* Mission Section */}
-      <div className="py-20 lg:py-28">
-        <div className="container mx-auto px-6 lg:px-8">
+      <div className="py-14 lg:py-16">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
               Our Mission
