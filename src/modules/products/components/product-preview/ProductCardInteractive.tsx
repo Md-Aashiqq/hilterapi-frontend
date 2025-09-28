@@ -533,15 +533,16 @@ export function AddToCartButton({ productId, productTitle, product }: ProductCar
       {/* Action Buttons */}
       <div className="flex gap-2">
         {/* Add to Cart Button */}
-        <button 
+        {/* <button 
           className={`
-            ${isOutOfStock 
+            ${
+              isOutOfStock 
               ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
               : success 
                 ? 'bg-green-600 hover:bg-green-700 text-white'
                 : 'bg-blue-600 hover:bg-blue-700 text-white'
             }
-            text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 rounded-md 
+            text-[14px] sm:text-[14px] px-2 sm:px-3 py-1 sm:py-2 rounded-md 
             transition-all duration-300 opacity-0 group-hover:opacity-100 
             transform translate-x-4 group-hover:translate-x-0 
             whitespace-nowrap flex-shrink-0 disabled:cursor-not-allowed 
@@ -594,7 +595,7 @@ export function AddToCartButton({ productId, productTitle, product }: ProductCar
               <span className="hidden sm:inline">Add to Cart</span>
             </>
           )}
-        </button>
+        </button> */}
 
         {/* Buy Now Button */}
         {/* <button 
