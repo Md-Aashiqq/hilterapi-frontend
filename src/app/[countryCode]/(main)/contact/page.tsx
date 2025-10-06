@@ -75,7 +75,7 @@ const Contact = () => {
                         <h4>📱 Instagram</h4>
                         <p>@topper_manic_</p>
                         <p>@the_h.itler_abi_</p>
-                        <p>@aji_yazz</p>
+                        {/* <p>@aji_yazz</p> */}
                         <p>Daily updates and behind-the-scenes content</p>
                     </div>
                 </div>
